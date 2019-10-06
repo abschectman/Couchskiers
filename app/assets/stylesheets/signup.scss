@@ -1,0 +1,401 @@
+.auth-info{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-image: image-url("ski-photo.jpeg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+.signup{
+  background-color: white;
+  height: 60%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  border-radius: 4px;
+}
+
+
+.demo-login{
+  background-color: white;
+  height: 60%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  border-radius: 4px;
+}
+
+.names{
+  display: flex;
+  justify-content: center;
+  width: 400px;
+}
+
+.first-name{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-right: 5px;
+  border: 1.5px black;
+  font-size: 16px;
+font-weight: normal;
+}
+
+.last-name{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 5px;
+font-size: 16px;
+font-weight: normal;
+}
+
+.first-name > input{
+  margin-top: 10px;
+  height: 40px;
+  width: 105px;
+  border-radius: 4px;
+  box-shadow: none
+}
+
+.last-name > input{
+  margin-top: 10px;
+  height: 40px;
+  width: 105px;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.head{
+height: 60px;
+border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+
+h3{
+  font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.email{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 230px;
+}
+
+.password{
+  display: flex;
+  flex-direction: column;
+  // align-items: left;
+  width: 230px;
+}
+
+.email > input{
+  margin-top: 10px;
+  border-radius: 4px;
+  height: 40px;
+}
+
+.password > input{
+  margin-top: 10px;
+  border-radius: 4px;
+  height: 40px;
+}
+
+.local{
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 30px;
+}
+
+.share{
+  font-size: 20px;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.bottom-join{
+    background-color: #ED6504;
+    border-color: #ED6504;
+    font-family: Lato;
+    font-size: 15px;
+    border-radius: 4px;
+    height: 40px;
+    width:  200px;
+    color: white;
+}
+
+.bottom-join:hover{
+  background-color: #27374c;
+  cursor: pointer;
+}
+
+.auth-info-modal{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('ski-photo.jpeg');
+  background-size: 100%;
+}
+
+.exit{
+  margin-left: 320px;
+}
+
+.login-button{
+  background-color: transparent;
+  color: white;
+  height: 40px;
+  width: 60px;
+  font-size: 15px;
+  border: none;
+  text-shadow: -0.3px 0 black, 0 0.3px black, 0.3px 0 black, 0 -0.3px black;
+}
+
+.login-button:hover{
+  cursor: pointer;
+}
+
+.login{
+  background-color: white;
+  color: #27374c;
+  margin-left: 10px;
+  border-radius: 4px;
+  margin-top: 8px;
+  padding: 8px;
+  height: 40px;
+  width: 60px;
+  font-size: 15px;
+}
+
+.join{
+  background-color: #27374c;
+  color: white;
+  margin-left: 70%;
+  border-radius: 4px;
+   padding: 8px;
+  height: 40px;
+  width: 60px;
+  font-size: 15px;
+}
+
+.login:hover{
+  cursor: pointer;
+}
+
+.join:hover{
+  cursor: pointer;
+}
+
+.title{
+    font-family: papyrus;
+    color: #D4490B;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.errors{
+  color: #3e1214;
+  // background-color: #f1cdd0;
+  padding: 15px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errors > li{
+  // list-style-image: url("skiis.png")
+list-style: none;
+}
+
+.dropdown{
+  list-style: none;
+  height: 30px;
+  width: 200px;
+  margin-right: 30px;
+  background-color: white;
+  border: 0.1px solid rgba(0,0,0,0.1);
+}
+
+.drop-container{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  right: 40%;
+}
+
+.loc-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown:hover{
+  cursor: pointer;
+}
+
+
+.show-header{
+     display: flex;
+    justify-content: space-around;
+    height: 60px;
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+
+.explore{
+  display: flex;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.explore > span{
+    height: 30%;
+    border-right: 1.7px solid rgba(0,0,0,0.15);
+    border-left: 1.3px solid rgba(0,0,0,0.15);
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+    padding: 10px;
+    padding-bottom: 20px;
+    // top: 5px;
+}
+
+.explore-search > input{
+    height: 30%;
+    border-right: 1.7px solid rgba(0,0,0,0.15);
+    border-left: 1.3px solid rgba(0,0,0,0.15);
+    border-bottom: 1.5px solid rgba(0,0,0,0.15);
+    border-top: none;
+    padding: 10px;
+    padding-bottom: 20px;
+    // top: 5px;
+}
+
+.settings-li-hidden{
+  display: none;
+}
+
+li.settings-li-shown {
+    position: relative;
+    list-style: none;
+    /* position: absolute; */
+    padding: 10px;
+    background-color: white;
+}
+
+.pro{
+  display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.show-body{
+      display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    background-color: beige;
+    height: 100%;
+    background-size: cover;
+     -webkit-font-feature-settings: 'kern', 'liga', 'pnum';
+    font-feature-settings: 'kern', 'liga', 'pnum';
+    background-color:beige;
+    color: #27374c;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.show-left{
+      display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 60%;
+    width: 30%;
+    border-bottom: 1.5px solid rgba(0,0,0,0.15);
+}
+
+.show-middle{
+    background-color: white;
+    height: 60%;
+    width: 50%;
+    border-bottom: 1.5px solid rgba(0,0,0,0.15);
+   
+}
+
+.middle-top{
+  display: flex;
+  border-bottom: 1.5px solid rgba(0,0,0,0.15);
+  padding: 30px;
+}
+
+.top-left{
+display: flex;
+flex-direction: column;
+}
+
+.show-host{
+  font-size: 1.4em;
+}
+
+.login-time{
+  color: gray;
+  font-size: 15px;
+}
+
+.edit-button{
+  background-color: #287FB8;
+    border: 1px solid #287FB8;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    max-width: 240px;
+    min-width: 6em;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    white-space: normal;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+    margin-left: 30%;
+}
+
+.description-section{
+  height: 500px;
+}

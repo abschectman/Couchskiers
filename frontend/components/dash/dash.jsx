@@ -12,6 +12,7 @@ constructor(props){
   this.handleLocation = this.handleLocation.bind(this);
   this.selectLocation = this.selectLocation.bind(this);
   this.showList = this.showList.bind(this);
+  this.handleEdit = this.handleEdit.bind(this)
 }
 
 componentDidMount(){
@@ -57,6 +58,11 @@ handleLogout(e){
     this.props.findLocations(e.currentTarget.value)
   }
 
+  handleEdit(e){
+    e.preventDefault();
+    this.props.history.push(`/banana/${this.props.currentUser.id}`)
+  }
+
 
 render (){
   let displayString = [];
@@ -65,7 +71,7 @@ render (){
     displayString = this.props.locations.map(lo => <li className="dropdown" id={lo.id} key={lo.id} onClick={this.selectLocation}>{(lo.city + ", " + lo.country)}</li>)
   }
   if(this.props.user.id === this.props.currentUser.id){
-    edit = <button className="edit-button" ><a href={`#/users/banana/${this.props.currentUser.id}`}>Edit My Profile</a></button>
+    edit = <button className="edit-button" onClick={this.handleEdit}>Edit My Profile</button>
   } else {
     edit = [];
   }

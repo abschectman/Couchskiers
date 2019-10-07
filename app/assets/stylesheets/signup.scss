@@ -323,12 +323,11 @@ li.settings-li-shown {
       display: flex;
     margin: 0 auto;
     justify-content: center;
-    background-color: beige;
+    background-color: #F1EFEA;
     height: 100%;
     background-size: cover;
      -webkit-font-feature-settings: 'kern', 'liga', 'pnum';
     font-feature-settings: 'kern', 'liga', 'pnum';
-    background-color:beige;
     color: #27374c;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 1em;
@@ -408,7 +407,7 @@ flex-direction: column;
 }
 
 .show{
-  background-color: beige;
+  background-color: #F1EFEA;
     position: absolute;
     height: 100%;
     width: 100%;

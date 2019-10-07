@@ -25,16 +25,14 @@ class SignupForm extends React.Component{
       email: "demo@test.com",
       password: "password"
     }
-    this.props.login(demoUser)
-    this.props.history.push(`/users/${1}`)
+    this.props.login(demoUser).then(user => (this.props.history.push(`/users/${user.id}`)))
+    
   }
 
   handleSubmit(e){
     e.preventDefault();
     let user = this.state
-    this.props.create(user)
-
-    this.props.history.push(`/users`)
+    this.props.create(user).then(user => (this.props.history.push(`/users/${user.id}`)))
   }
 
   update(field) {

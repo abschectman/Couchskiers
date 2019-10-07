@@ -33,7 +33,7 @@ const eraseUser = (user) => {
 
 
 export const createUser = (user) => (dispatch) => {
-  signUp(user).then(user => {
+  return signUp(user).then(user => {
     dispatch(receiveCurrentUser(user))
   }, error => (dispatch(receiveErrors(error))))
 }
@@ -45,7 +45,7 @@ export const deleteUser = (user) => (dispatch) => {
 }
 
 export const login = (user) => (dispatch) => {
-  signIn(user).then(
+  return signIn(user).then(
     user => {
       dispatch(receiveCurrentUser(user));
     },

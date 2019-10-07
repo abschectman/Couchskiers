@@ -36,3 +36,11 @@ export const userShow = (id) => {
     data: id
   })
 }
+
+export const patchUser = (user) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `api/users/${user.id}`,
+    data: {user}
+  })
+}

@@ -57,6 +57,7 @@ handleLogout(e){
     this.props.findLocations(e.currentTarget.value)
   }
 
+
 render (){
   let displayString = [];
   let edit = [];
@@ -64,14 +65,14 @@ render (){
     displayString = this.props.locations.map(lo => <li className="dropdown" id={lo.id} key={lo.id} onClick={this.selectLocation}>{(lo.city + ", " + lo.country)}</li>)
   }
   if(this.props.user.id === this.props.currentUser.id){
-    edit = <button className="edit-button">Edit My Profile</button>
+    edit = <button className="edit-button" ><a href={`#/users/banana/${this.props.currentUser.id}`}>Edit My Profile</a></button>
   } else {
     edit = [];
   }
   return (
     <main className="show">
     <section className="show-header">
-      <img src="" alt=""/>
+        <img src="app/assets/images/couchsurfing.png" alt=""/>
       <div className="explore">
           <span>Explore</span>
           <img src="" alt=""/>
@@ -81,7 +82,7 @@ render (){
           </div>
       </div>
       <span className="pro">Profile</span>
-      <ul className="head-settings" onClick={this.showList}> Settings
+        <ul className="head-settings" onClick={this.showList}> <img src="app/assets/images/settings.webp" alt=""/> Settings
       <li className="settings-li-hidden">Account and Settings</li>
         <li className="settings-li-hidden" onClick={this.handleLogout}>Log Out</li>
       </ul>

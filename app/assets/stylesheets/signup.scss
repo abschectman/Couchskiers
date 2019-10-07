@@ -398,6 +398,11 @@ flex-direction: column;
     margin-left: 30%;
 }
 
+.edit-button > a{
+  color: white;
+  text-decoration: none;
+}
+
 .description-section{
   height: 500px;
 }
@@ -410,4 +415,13 @@ flex-direction: column;
 }
 .dis-list{
   position: absolute;
+}
+
+.head-settings:hover{
+  cursor: pointer;
+}
+
+.head-settings{
+  display: flex;
+  flex-direction: column;
 }

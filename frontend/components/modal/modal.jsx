@@ -27,7 +27,7 @@ class Modal extends React.Component {
       password: "password"
     }
     this.props.login(demoUser)
-    this.props.history.push("/users")
+    this.props.history.push("/users/1")
   }
 
   closer(e) {

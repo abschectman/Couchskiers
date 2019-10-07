@@ -26,13 +26,14 @@ class SignupForm extends React.Component{
       password: "password"
     }
     this.props.login(demoUser)
-    this.props.history.push("/users/1")
+    this.props.history.push(`/users/${1}`)
   }
 
   handleSubmit(e){
     e.preventDefault();
     let user = this.state
     this.props.create(user)
+
     this.props.history.push(`/users`)
   }
 

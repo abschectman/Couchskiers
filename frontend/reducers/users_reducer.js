@@ -8,8 +8,10 @@ const usersReducer = (state = {}, action) => {
       let newState = state;
       if (action.user instanceof Array) {
         newState = { errors: action.user };
+        return Object.assign({}, newState, action.user);
       }
-      return Object.assign({}, newState, action.user);
+      let id = action.user.id;
+      return Object.assign({}, newState, { [id]: action.user });
     }
     case REMOVE_USER: {
       let newState = state;
@@ -18,10 +20,14 @@ const usersReducer = (state = {}, action) => {
     }
 
     case EDIT_USER:{
-      return action.user
+      let newState = state;
+      let id = action.user.id;
+     return Object.assign({}, newState, { [id]: action.user})
     }
     case SHOW_USER:{
-      return action.user
+      let newState = state;
+      let id = action.user.id;
+     return Object.assign({}, newState, { [id]: action.user})
     }
     default:
       return state;

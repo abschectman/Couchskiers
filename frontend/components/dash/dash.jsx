@@ -17,7 +17,8 @@ constructor(props){
 
 componentDidMount(){
   this.props.getUser(parseInt(this.props.userId))
-  this.props.findLocation(this.props.user.id)
+  this.props.findLocation(this.props.users[this.props.userId].location_id)
+  
 }
 
 handleLogout(e){
@@ -60,25 +61,27 @@ handleLogout(e){
 
   handleEdit(e){
     e.preventDefault();
-    this.props.history.push(`/banana/${this.props.currentUser.id}`)
+    this.props.history.push(`/banana/${this.props.currentUser}`)
   }
 
 
 render (){
   let displayString = [];
   let edit = [];
+  let view;
   if (this.props.locations instanceof Array) {
     displayString = this.props.locations.map(lo => <li className="dropdown" id={lo.id} key={lo.id} onClick={this.selectLocation}>{(lo.city + ", " + lo.country)}</li>)
   }
-  if(this.props.user.id === this.props.currentUser.id){
+  if(parseInt(this.props.userId) === this.props.currentUser){
     edit = <button className="edit-button" onClick={this.handleEdit}>Edit My Profile</button>
   } else {
     edit = [];
   }
-  return (
+  if(this.props.users[this.props.userId]) {
+    view = (
     <main className="show">
     <section className="show-header">
-        <img src="app/assets/images/couchsurfing.png" alt=""/>
+        <img id ="show-logo" alt=""/>
       <div className="explore">
           <span>Explore</span>
           <img src="" alt=""/>
@@ -88,29 +91,29 @@ render (){
           </div>
       </div>
       <span className="pro">Profile</span>
-        <ul className="head-settings" onClick={this.showList}> <img src="app/assets/images/settings.webp" alt=""/> Settings
-      <li className="settings-li-hidden">Account and Settings</li>
+        <ul className="head-settings" onClick={this.showList}> <img id="setting-img" alt=""/> Settings
+      <li className="settings-li-hidden" onClick={this.handleEdit}>Account and Settings</li>
         <li className="settings-li-hidden" onClick={this.handleLogout}>Log Out</li>
       </ul>
     </section>
 <section className="show-body">
     <section className="show-left">
-      <img src="" alt=""/>
-      <span>{this.props.user.email}</span>
-        <a href="">{this.props.user.location}</a>
-        <span>gray bar</span>
-        <span>Profile not Verified</span>
-        <li>Payment not verified</li>
-        <li>Phone not verified</li>
-        <li>Government ID not verfied</li>
-        <li>Address not verified</li>
+          <img id="user-img"></img>
+      <span>{this.props.users[this.props.userId].email}</span>
+          <a href="">{this.props.users[this.props.userId].location}</a>
+        
+        <span id="profile">Profile not Verified</span>
+        <li id="list-li">Payment not verified</li>
+          <li id="list-li">Phone not verified</li>
+          <li id="list-li">Government ID not verfied</li>
+          <li id="list-li">Address not verified</li>
     </section>
 
     <section className="show-middle">
       <div className="middle-top">
         <div className="top-left">
-        <span className="show-host">{this.props.user.hosting_status}</span>
-        <span className="login-time">Last login less than ..</span>
+              <span className="show-host">{this.props.users[this.props.userId].hosting_status}</span>
+        <span className="login-time">Last login today</span>
         </div>
         {edit}
       </div>
@@ -118,14 +121,17 @@ render (){
       <div className="middle-middle">
         <span>ABOUT ME</span>
         <div className="description-section">
-        <span>{this.props.user.description}</span>
+              <span>{this.props.users[this.props.userId].description}</span>
         </div>
       </div>
     </section>
       </section>
     </main>
-  )
-}
-}
+  )} else{
+    view = <h1>Loading ...</h1>
+  }
+return view
+}}
+
 
 export default Dash;

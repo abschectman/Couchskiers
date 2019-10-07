@@ -7,7 +7,7 @@ import {openModal, closeModal} from "../../actions/modal_actions"
 const msp = ( state ) => {
   return {
     currentUser: state.session.currentUser,
-    user: state.entities.user,
+    users: state.entities.users,
     errors: state.errors,
     locations: state.entities.locations
   };

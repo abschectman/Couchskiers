@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render json: @user
+      render :show
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -11,9 +11,9 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    if session[:session_token] == @user.session_token && @user.update(user_params)
       login(@user)
-      render json: @user
+      render :show
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -28,7 +28,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render json: @user
+    render :show
   end
 
 private

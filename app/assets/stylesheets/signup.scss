@@ -278,23 +278,25 @@ list-style: none;
 
 .explore > span{
     height: 30%;
-    border-right: 1.7px solid rgba(0,0,0,0.15);
-    border-left: 1.3px solid rgba(0,0,0,0.15);
-    border-bottom: 2px solid rgba(0,0,0,0.15);
+    // border-right: 1.7px solid rgba(0,0,0,0.15);
+    // border-left: 1.3px solid rgba(0,0,0,0.15);
+    // border-bottom: 2px solid rgba(0,0,0,0.15);
     padding: 10px;
     padding-bottom: 20px;
-    // top: 5px;
+       box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5);
+   
 }
 
 .explore-search > input{
     height: 30%;
-    border-right: 1.7px solid rgba(0,0,0,0.15);
-    border-left: 1.3px solid rgba(0,0,0,0.15);
-    border-bottom: 1.5px solid rgba(0,0,0,0.15);
+    // border-right: 1.7px solid rgba(0,0,0,0.15);
+    // border-left: 1.3px solid rgba(0,0,0,0.15);
+    // border-bottom: 1.5px solid rgba(0,0,0,0.15);
     border-top: none;
     padding: 10px;
     padding-bottom: 20px;
-    // top: 5px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5);
+    font-size: 16px;
 }
 
 .settings-li-hidden{
@@ -343,10 +345,11 @@ li.settings-li-shown {
     width: 30%;
     border-bottom: 1.5px solid rgba(0,0,0,0.15);
     margin: 10px;
+    align-items: center;
 }
 
 .show-middle{
-    background-color: white;
+    background-color:#F1EFEA;
     height: 60%;
     width: 50%;
     border-bottom: 1.5px solid rgba(0,0,0,0.15);
@@ -357,6 +360,8 @@ li.settings-li-shown {
   display: flex;
   border-bottom: 1.5px solid rgba(0,0,0,0.15);
   padding: 30px;
+  background-color: white;
+  margin-bottom: 20px;
 }
 
 .top-left{
@@ -424,3 +429,66 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
 }
+
+#list-li {
+	margin: 0;
+	padding: 20px 0 20px 40px;
+	list-style: none;
+	background-image: url("ski.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+  background-size: 40px;
+  color: #929dad;
+  font-size: 1em;
+}
+
+   #profile{ line-height: 1.8em;
+    margin-bottom: 7px;
+    color: #34495e;
+    max-width: 200px;
+    font-size: 1.2em;
+      margin: 0 40px;
+    padding: 0 0 35px 0;
+    border-bottom: 1px solid #e6e6e6;
+   }
+
+   #user-img{
+    background-image: url("userimg.png");
+    margin-bottom: 16px;
+    height: 100px;
+    width: 100px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    border: none;
+    margin-top: 10px;
+   }
+
+   #show-logo{
+    background-image: url("couchsurfing.png");
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+   }
+   .middle-middle{
+     background-color: white;
+    height: 70%;
+   border-bottom: 1.5px solid rgba(0,0,0,0.15);
+  }
+      
+  .description-section{
+    border-top: 1.5px solid rgba(0,0,0,0.15);
+    background-color: #f7f7f7;
+    border-bottom: 1.5px solid rgba(0,0,0,0.15);
+}
+
+.middle-middle > span{
+  line-height: 80px;
+}
+
+#setting-img{
+  background-image: url("settings.webp");
+   background-size: cover;
+    height: 50px;
+    width: 50px;
+   }

@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
      @user = User.find_by(email: params[:user][:email])
     if @user && @user.is_password?(params[:user][:password])
       login(@user)
-      render json: @user
+      render :show
     else
       render json: ["Invalid Username or Password"], status: 422
     end

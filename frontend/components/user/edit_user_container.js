@@ -15,7 +15,7 @@ const msp = (state, ownProps) => {
     errors: state.errors,
     currentLocation: state.entities.locations,
     userId: ownProps.match.params.userId,
-    user: state.entities.user
+    users: state.entities.users
   };
 };
 

@@ -25,7 +25,7 @@ class SignupForm extends React.Component{
       email: "demo@test.com",
       password: "password"
     }
-    this.props.login(demoUser).then(user => (this.props.history.push(`/users/${user.id}`)))
+    this.props.login(demoUser)
     
   }
 
@@ -77,6 +77,7 @@ class SignupForm extends React.Component{
         err = err.map(er => <li key={er}>{er}</li>)
        cont = <div className="errors">{err}</div>
     }}
+
    return (
        <main>
          <section className="head">

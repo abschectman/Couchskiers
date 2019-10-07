@@ -46,6 +46,7 @@ export const deleteUser = (user) => (dispatch) => {
 
 export const login = (user) => (dispatch) => {
   return signIn(user).then(
+    
     user => {
       dispatch(receiveCurrentUser(user));
     },

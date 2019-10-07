@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def edit
+  def update
     @user = User.find(params[:id])
     if @user.update(user_params)
       login(@user)

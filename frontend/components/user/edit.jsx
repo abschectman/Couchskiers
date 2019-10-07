@@ -3,15 +3,19 @@ class Edit extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      location: "",
-      myLocation: this.props.location,
-      targetUser: {},
+      id: this.props.currentUser.id,
+      email: this.props.currentUser.email,
+      description: this.props.currentUser.description,
+      location: this.props.currentUser.location,
+      hosting_status: this.props.currentUser.hosting_status
     }
     this.logout = this.props.logout.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.handleLocation = this.handleLocation.bind(this);
     this.selectLocation = this.selectLocation.bind(this);
     this.showList = this.showList.bind(this);
+    this.change = this.change.bind(this)
+    this.handleUpdate = this.handleUpdate.bind(this)
   }
 
   handleLogout(e) {
@@ -20,12 +24,25 @@ class Edit extends React.Component {
     this.props.history.push("/signup")
   }
 
+
+    handleUpdate(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
   selectLocation(e) {
     e.preventDefault();
     this.setState({
       location: e.currentTarget.innerText
     })
     this.props.clearLocations();
+  }
+
+  change(e){
+    e.preventDefault();
+    let user = this.state
+    this.props.changeUser(user).then(user => (this.props.history.push(`/users/${this.props.currentUser.id}`)))
   }
 
   showList(e) {
@@ -76,35 +93,22 @@ class Edit extends React.Component {
             <li className="settings-li-hidden" onClick={this.handleLogout}>Log Out</li>
           </ul>
         </section>
-        <section className="show-body">
-          <section className="show-left">
-            <img src="" alt="" />
-            <span>{this.props.currentUser.email}</span>
-            <a href="">{this.props.currentUser.location}</a>
-            <span>gray bar</span>
-            <span>Profile not Verified</span>
-            <li>Payment not verified</li>
-            <li>Phone not verified</li>
-            <li>Government ID not verfied</li>
-            <li>Address not verified</li>
-          </section>
+      <section className="edit-left">
 
-          <section className="show-middle">
-            <div className="middle-top">
-              <div className="top-left">
-                <span className="show-host">{this.props.currentUser.hosting_status}</span>
-                <span className="login-time">Last login less than ..</span>
-              </div>
-            </div>
+      </section>
 
-            <div className="middle-middle">
-              <span>ABOUT ME</span>
-              <div className="description-section">
-                <span>{this.props.currentUser.description}</span>
-              </div>
-            </div>
-          </section>
-        </section>
+      <section className="edit-main">
+        <form action="">
+          <button className="edit-button" onClick={this.change}>Save</button>
+         <label htmlFor="">Hosting Availibility
+         <input type="text" value={this.state.hosting_status} onChange={this.handleUpdate("hosting_status")}/>
+         </label>
+
+            <label htmlFor="">About Me
+         <input type="text" value={this.state.description} onChange={this.handleUpdate("description")} />
+            </label>
+          </form>
+      </section>
       </main>
     )
   }

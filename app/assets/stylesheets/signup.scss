@@ -263,6 +263,7 @@ list-style: none;
     justify-content: space-around;
     height: 60px;
     border-bottom: 2px solid rgba(0,0,0,0.15);
+    background-color: white;
 }
 
 .explore{
@@ -342,6 +343,7 @@ li.settings-li-shown {
     height: 60%;
     width: 30%;
     border-bottom: 1.5px solid rgba(0,0,0,0.15);
+    margin: 10px;
 }
 
 .show-middle{
@@ -349,7 +351,7 @@ li.settings-li-shown {
     height: 60%;
     width: 50%;
     border-bottom: 1.5px solid rgba(0,0,0,0.15);
-   
+   margin: 10px;
 }
 
 .middle-top{
@@ -398,4 +400,14 @@ flex-direction: column;
 
 .description-section{
   height: 500px;
+}
+
+.show{
+  background-color: beige;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.dis-list{
+  position: absolute;
 }

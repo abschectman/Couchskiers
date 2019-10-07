@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import {createUser, login} from "../../actions/session_actions";
+import {getUser} from "../../actions/user_actions"
 import {findLocations, clearLocations} from "../../actions/location_actions"
 import SignupForm from "./signup_form"
 import {openModal, closeModal} from "../../actions/modal_actions"
@@ -20,6 +21,7 @@ const mdp = (dispatch) =>{
     login: (user) => dispatch(login(user)),
     findLocations: (string) => dispatch(findLocations(string)),
     clearLocations: () => dispatch(clearLocations())
+
   }
 }
 

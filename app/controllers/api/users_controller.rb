@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[id])
+    @user = User.find(params[:id])
     if @user.update
       login(@user)
     else
@@ -20,13 +20,13 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[id])
+    @user = User.find(params[:id])
     @user.destroy
     logout
   end
 
   def show
-    @user = User.find(params[id])
+    @user = User.find(params[:id])
     render json: @user
   end
 

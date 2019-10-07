@@ -33,6 +33,6 @@ export const userShow = (id) => {
   return $.ajax({
     method: "GET",
     url: `api/users/${id}`,
-    data: { user }
+    data: id
   })
 }

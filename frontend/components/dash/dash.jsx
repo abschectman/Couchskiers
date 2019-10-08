@@ -17,7 +17,7 @@ constructor(props){
 
 componentDidMount(){
   this.props.getUser(parseInt(this.props.userId))
-  this.props.findLocation(this.props.users[this.props.userId].location_id)
+  // this.props.findLocation(this.props.users[this.props.userId].location_id)
   
 }
 

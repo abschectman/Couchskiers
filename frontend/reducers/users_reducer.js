@@ -1,5 +1,5 @@
 import {RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, REMOVE_USER, RECEIVE_SESSION_ERRORS} from "../actions/session_actions";
-import { SHOW_USER, EDIT_USER } from "../actions/user_actions";
+import { SHOW_USER, EDIT_USER, GET_USERS } from "../actions/user_actions";
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -17,6 +17,11 @@ const usersReducer = (state = {}, action) => {
       let newState = state;
       delete state[action.user.id];
       return newState;
+    }
+
+    case GET_USERS:{
+      let newState = state;
+      return Object.assign({}, newState, action.users);
     }
 
     case EDIT_USER:{

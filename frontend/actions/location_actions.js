@@ -33,3 +33,4 @@ export const findLocations = string => dispatch => {
 export const clearLocations = () => dispatch => {
   dispatch(receiveLocations([]))
 }
+

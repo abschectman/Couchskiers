@@ -1,12 +1,20 @@
-import {userShow, patchUser} from "../util/session_api_util"
+import {userShow, patchUser, findUsers} from "../util/session_api_util"
 
 export const SHOW_USER = "SHOW_USER"
 export const EDIT_USER = "EDIT_USER"
+export const GET_USERS = "GET_USERS"
 
 const showUser = (user) => {
   return({
     type: SHOW_USER,
     user: user
+  })
+}
+
+const getsUsers = (users) => {
+  return ({
+    type: GET_USERS,
+    users: users
   })
 }
 
@@ -29,3 +37,10 @@ export const changeUser = (user) => (dispatch) => {
     dispatch(editUser(user))
   })
 }
+
+export const getLocationUsers = (locationId) => dispatch => {
+  return  findUsers(locationId).then(users => {
+    dispatch(getsUsers(users))
+  })
+
+};

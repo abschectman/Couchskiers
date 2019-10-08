@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
-import { getUser } from "../../actions/user_actions";
+import { getUser, getLocationUsers } from "../../actions/user_actions";
 import {
   findLocation
 } from "../../actions/location_actions";
@@ -19,7 +19,8 @@ const mdp = dispatch => {
   return {
     logout: () => dispatch(logout()),
     findLocation: id => dispatch(findLocation(id)),
-    getUser: id => dispatch(getUser(id))
+    getUser: id => dispatch(getUser(id)),
+    getLocationUsers: location_id => dispatch(getLocationUsers(location_id))
   };
 };
 

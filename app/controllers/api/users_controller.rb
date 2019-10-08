@@ -20,6 +20,10 @@ class Api::UsersController < ApplicationController
 
   end
 
+  def index
+    @users = User.find_by(location_id: params[:location_id])
+  end
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy

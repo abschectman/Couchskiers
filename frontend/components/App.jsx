@@ -4,6 +4,7 @@ import SignUpConainer from "./session/signup_container"
 import Login from "./modal/modal_container"
 import Dash from "./dash/dash_container"
 import Edit from "./user/edit_user_container"
+import Location from "./location/location_container"
 import {AuthRoute, ProtectedRoute} from "../util/route_util"
 const App = () => (
   <div>
@@ -11,6 +12,7 @@ const App = () => (
     <AuthRoute path="/signup" component={Login} />
     <ProtectedRoute path="/banana/:userId" component={Edit} />
     <ProtectedRoute exact path="/users/:userId" component={Dash} />
+    <Route path="/locations/:locationId" component={Location} />
   </div>
 );
 

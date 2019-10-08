@@ -8,6 +8,11 @@ class Api::LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
-    render json: @location
+    if @location 
+        @hosts = @location.hosts
+        render :show
+    else
+      render json: ["No Such Location"], status: 422
+    end
   end
 end

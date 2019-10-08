@@ -15,6 +15,8 @@ class Edit extends React.Component {
     this.showList = this.showList.bind(this);
     this.change = this.change.bind(this)
     this.handleUpdate = this.handleUpdate.bind(this)
+    this.hostingOptions = this.hostingOptions.bind(this);
+    this.cancel = this.cancel.bind(this)
   }
 
   handleLogout(e) {
@@ -40,8 +42,16 @@ class Edit extends React.Component {
 
   change(e){
     e.preventDefault();
+    let h = document.getElementById("ddlViewBy");
+    let hosting = h.options[h.selectedIndex].text;
     let user = this.state
+    user["hosting_status"] = hosting;
     this.props.changeUser(user).then(user => (this.props.history.push(`/users/${this.props.currentUser}`)))
+  }
+
+  cancel(e){
+    e.preventDefault();
+    this.props.history.push(`/users/${this.props.currentUser}`)
   }
 
   showList(e) {
@@ -60,6 +70,17 @@ class Edit extends React.Component {
       })
     }
 
+  }
+
+  hostingOptions(){
+    let options = ["Accepting Guest", "Maybe Accepting Guests", "Not Accepting Guest", "Wants to Meet Up"].map(str => {
+      if(this.state.hosting_staus === str){
+      return <option selected="selected" onSelect={this.handleUpdate("hosting_status")} value={str}>{str}</option>
+    } else {
+        return <option onSelect={this.handleUpdate("hosting_status")} value={str}>{str}</option>
+    }
+  })
+  return options
   }
 
   handleLocation(e) {
@@ -92,27 +113,36 @@ class Edit extends React.Component {
             <li className="settings-li-hidden" onClick={this.handleLogout}>Log Out</li>
           </ul>
         </section>
-      <section className="edit-left">
 
+        <section id="edit-outer">
+      <section className="edit-left">
+        <img className="left-img" src="" alt=""/>
+        <div id="overview">
+          <span>OVERVIEW</span>
+          <li>Member since 2019</li>
+        </div>
       </section>
 
       <section className="edit-main">
+        <h1>{this.state.email}</h1>
         <form action="">
-          <button className="edit-button" onClick={this.change}>Save</button>
+          <div id="row-one">
+            <span id="abt">About</span>
+              <button className="edit-button-page" onClick={this.change}>Save</button>
+                <button className="edit-button-page" onClick={this.cancel}>Cancel</button>
+          </div>
          <label htmlFor="">Hosting Availibility
-         <select>
-                <option onClick={this.handleUpdate("hosting_status")} value="Accepting Guests">Accepting Guests</option>
-                <option onClick={this.handleUpdate("hosting_status")} value="Maybe Accepting Guests">Maybe Accepting Guests</option>
-                <option onClick={this.handleUpdate("hosting_status")} value="Not Accepting Guests">Not Accepting Guests</option>
-                <option onClick={this.handleUpdate("hosting_status")} value="Wants To Meet Up">Wants To Meet Up</option>
+         <select id="ddlViewBy">
+               {this.hostingOptions()}
           </select>
          </label>
 
-            <label htmlFor="">About Me
-         <input type="text" value={this.state.description} onChange={this.handleUpdate("description")} />
+            <label id="descript" htmlFor="">About Me
+         <input type="textarea" value={this.state.description} onChange={this.handleUpdate("description")} />
             </label>
           </form>
       </section>
+        </section>
       </main>
     )
   }

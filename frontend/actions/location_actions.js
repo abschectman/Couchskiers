@@ -17,7 +17,7 @@ const receiveLocations = locations => {
 };
 
 export const findLocation = id => dispatch => {
-  getLocation(id).then(
+  return getLocation(id).then(
     location => {
       dispatch(receiveCurrentLocation(location));
     }

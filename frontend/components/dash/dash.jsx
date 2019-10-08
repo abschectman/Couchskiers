@@ -33,6 +33,7 @@ handleLogout(e){
       location: e.currentTarget.innerText
     })
     this.props.clearLocations();
+    this.props.history.push(`/locations/${parseInt(e.currentTarget.id)}`)
   }
 
   showList(e){
@@ -112,7 +113,7 @@ render (){
     <section className="show-middle">
       <div className="middle-top">
         <div className="top-left">
-              <span className="show-host">{this.props.users[this.props.userId].hosting_status}</span>
+            <span className="show-host">{this.props.users[this.props.userId].hosting_status}</span>
         <span className="login-time">Last login today</span>
         </div>
         {edit}

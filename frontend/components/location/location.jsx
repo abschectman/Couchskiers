@@ -14,9 +14,11 @@ class Location extends React.Component{
 
   getUsers(){
     let arr = [];
-    this.props.locations[parseInt(this.props.locationId)].hosts.forEach(el => {
-        arr.push(<li>{this.props.users[el.id].email}</li>)
-    });
+    let i = 0;
+    while (i < this.props.locations[this.props.locationId].hosts.length){
+      arr.push(this.props.locations[this.props.locationId].hosts[i].email)
+      i++
+    }
     return arr;
   }
 

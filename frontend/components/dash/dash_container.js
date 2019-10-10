@@ -7,18 +7,17 @@ import Dash from "./dash";
 const msp = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    locations: state.entities.locations,
     errors: state.errors,
-    currentLocation: state.entities.locations,
+    locations: state.entities.locations,
     userId: ownProps.match.params.userId,
-    users: state.entities.users
+    users: state.entities.users,
+    test: state.entities.users[ownProps.match.params.userId].location_id
   };
 };
 
 const mdp = dispatch => {
   return {
     logout: () => dispatch(logout()),
-    findLocations: string => dispatch(findLocations(string)),
     clearLocations: () => dispatch(clearLocations()),
     findLocation: id => dispatch(findLocation(id)),
     getUser: id => dispatch(getUser(id))

@@ -46,7 +46,6 @@ export const patchUser = (user) => {
 }
 
 export const findUsers = (loactionId) => {
-  debugger
   return $.ajax({
     method: "GET",
     url: `/api/users`

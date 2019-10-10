@@ -3,6 +3,7 @@ class Api::LocationsController < ApplicationController
     @locations = Location.all
     @string = params[:string]
     @selected = @locations.select{|location| location.city[0...@string.length].downcase == @string.downcase}
+    
     render json: @selected[0..2]
   end
 

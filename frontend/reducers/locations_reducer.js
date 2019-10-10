@@ -1,6 +1,7 @@
 import {
   RECEIVE_CURRENT_LOCATION, RECEIVE_LOCATIONS
 } from "../actions/location_actions";
+import {SHOW_USER} from "../actions/user_actions"
 
 const locationsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -8,9 +9,12 @@ const locationsReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_LOCATION: {
       return action.currentLocation;
     }
-    case RECEIVE_LOCATIONS: {
-     return action.locations;
+
+    case SHOW_USER: {
+      let newState = state;
+      return Object.assign({}, newState, action.location);
     }
+
     default:
       return state;
   }

@@ -21,7 +21,8 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.find_by(location_id: params[:location_id])
+    @users = User.all
+    render json: @users
   end
 
   def destroy

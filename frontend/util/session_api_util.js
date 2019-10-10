@@ -45,10 +45,10 @@ export const patchUser = (user) => {
   })
 }
 
-export const findUsers = (locationId) => {
+export const findUsers = (loactionId) => {
+  debugger
   return $.ajax({
     method: "GET",
-    url: `api/users`,
-    data: {user: locationId}
+    url: `/api/users`
   })
 }

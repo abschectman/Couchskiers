@@ -5,7 +5,8 @@ export const RECEIVE_LOCATIONS = "RECEIVE_LOCATIONS"
 const receiveCurrentLocation = location => {
   return {
     type: RECEIVE_CURRENT_LOCATION,
-    currentLocation: location
+    currentLocation: location.locations,
+    users: location.users
   };
 };
 

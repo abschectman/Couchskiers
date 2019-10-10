@@ -9,7 +9,7 @@ import Location from "./location";
 const msp = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    locations: state.entities.locations,
+    location: state.entities.locations[ownProps.match.params.locationId],
     locationId: ownProps.match.params.locationId,
     users: state.entities.users
   };

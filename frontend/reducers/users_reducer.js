@@ -1,4 +1,5 @@
 import {RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, REMOVE_USER, RECEIVE_SESSION_ERRORS} from "../actions/session_actions";
+import {RECEIVE_CURRENT_LOCATION} from "../actions/location_actions"
 import { SHOW_USER, EDIT_USER, GET_USERS } from "../actions/user_actions";
 
 const usersReducer = (state = {}, action) => {
@@ -17,6 +18,11 @@ const usersReducer = (state = {}, action) => {
       let newState = state;
       delete state[action.user.id];
       return newState;
+    }
+
+    case RECEIVE_CURRENT_LOCATION:{
+      let newState = state;
+      return Object.assign({}, newState, action.users);
     }
 
     case GET_USERS:{

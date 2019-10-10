@@ -39,7 +39,9 @@ export const changeUser = (user) => (dispatch) => {
 }
 
 export const getLocationUsers = (locationId) => dispatch => {
+  debugger
   return  findUsers(locationId).then(users => {
+    debugger
     dispatch(getsUsers(users))
   })
 

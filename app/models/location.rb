@@ -7,6 +7,10 @@ class Location < ApplicationRecord
   foreign_key: :location_id,
   class_name: :User
 
+  has_many :hosting_requests,
+  through: :residents,
+  source: :host_requests
+
 
   def hosts
     @residents = self.residents

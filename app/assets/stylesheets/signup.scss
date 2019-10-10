@@ -232,7 +232,8 @@ list-style: none;
 }
 
 .dropdown{
-  position: absolute;
+  // position: absolute;
+  z-index: 1;
   list-style: none;
   height: 30px;
   width: 200px;
@@ -242,11 +243,10 @@ list-style: none;
 }
 
 .drop-container{
-  // position: absolute;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: left;
-  right: 40%;
 }
 
 .loc-container{
@@ -439,6 +439,7 @@ flex-direction: column;
 }
 .dis-list{
   position: absolute;
+  top: 22px;
 }
 
 .head-settings:hover{

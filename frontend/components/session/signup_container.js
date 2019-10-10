@@ -9,7 +9,7 @@ const msp = ( state ) => {
     currentUser: state.session.currentUser,
     users: state.entities.users,
     errors: state.errors,
-    locations: state.entities.locations
+    locations: state.ui.locations
   };
 };
 

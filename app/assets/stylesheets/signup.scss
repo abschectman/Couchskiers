@@ -384,6 +384,13 @@ li.settings-li-shown {
   margin-bottom: 20px;
 }
 
+.res-req{
+    background-color: #f7f7f7;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.15);
+    height: 200px;
+    margin-bottom: 20px;
+}
+
 .top-left{
 display: flex;
 flex-direction: column;
@@ -428,7 +435,7 @@ flex-direction: column;
 }
 
 .description-section{
-  height: 500px;
+  height: 200px;
 }
 
 .show{
@@ -499,7 +506,6 @@ flex-direction: column;
    }
    .middle-middle{
      background-color: white;
-    height: 70%;
    border-bottom: 1.5px solid rgba(0,0,0,0.15);
   }
       

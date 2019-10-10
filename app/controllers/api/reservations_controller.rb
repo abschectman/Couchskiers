@@ -1,4 +1,4 @@
-class ReservationsController < ApplicationController
+class Api::ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(res_params)
      if @reservation.save

@@ -33,6 +33,7 @@ class Location extends React.Component{
 
     getRequest(){
     if(this.props.location.requests){
+      debugger
     return this.props.location.requests.map(req => {
       let e = this.props.requesters[req.id].email.indexOf("@")
       return (<li className="host-list" id={this.props.requesters[req.id].id} onClick={this.handleHost}> <img id="host-img" src="

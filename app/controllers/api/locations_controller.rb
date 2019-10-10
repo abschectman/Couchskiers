@@ -10,7 +10,6 @@ class Api::LocationsController < ApplicationController
   def show
     @location = Location.find(params[:id])
     if @location 
-      debugger
         render :show
     else
       render json: ["No Such Location"], status: 422

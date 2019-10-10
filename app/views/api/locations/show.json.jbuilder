@@ -5,7 +5,7 @@ json.hosts do
   json.array! @location.hosts, :id
   end
   json.requests do
-  json.array! @location.hosting_requests, :id
+  json.array! @location.reservers, :id
   end
 end
 end

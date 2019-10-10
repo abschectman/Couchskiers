@@ -7,8 +7,9 @@ class Location extends React.Component{
     this.handleHost = this.handleHost.bind(this)
   }
 
-  componentDidMount(){
-    this.props.findLocation(this.props.locationId)
+  componentDidUpdate(){
+    if(!this.props.location){
+    this.props.findLocation(this.props.locationId)}
   }
 
   handleHost(e){

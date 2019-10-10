@@ -43,7 +43,6 @@ componentDidMount(){
       reserver_id: this.props.currentUser,
       host_id: parseInt(this.props.userId)
     }
-    debugger
     this.props.createRes(req)
   }
 

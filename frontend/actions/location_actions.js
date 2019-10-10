@@ -3,10 +3,12 @@ export const RECEIVE_CURRENT_LOCATION = "RECEIVE_CURRENT_LOCATION"
 export const RECEIVE_LOCATIONS = "RECEIVE_LOCATIONS"
 
 const receiveCurrentLocation = location => {
+
   return {
     type: RECEIVE_CURRENT_LOCATION,
     currentLocation: location.locations,
-    users: location.users
+    users: location.users,
+    requests: location.requesters
   };
 };
 

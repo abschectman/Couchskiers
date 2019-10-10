@@ -1,5 +1,5 @@
 import React from "react"
-
+import NavContainer from "../navbar/nav_container"
 class Location extends React.Component{
   constructor(props){
     super(props)
@@ -17,11 +17,14 @@ class Location extends React.Component{
   }
 
   getUsers(){
+    if(this.props.location.hosts){
     return this.props.location.hosts.map(host => {
       let e = this.props.users[host.id].email.indexOf("@")
       return (<li className="host-list" id={this.props.users[host.id].id} onClick={this.handleHost}> <img id="host-img" src="
     " alt=""/> <span>{this.props.users[host.id].email.slice(0, e)}... </span></li>)
-  })
+  })} else {
+    return [];
+  }
   }
 
 
@@ -30,6 +33,7 @@ render(){
     let hosts = this.getUsers();
     return (
       <main id="location-main">
+        <NavContainer />
         <div id="location-header">
           <span id="country">{this.props.location.country},</span>
           <span id="city">{this.props.location.city}</span>

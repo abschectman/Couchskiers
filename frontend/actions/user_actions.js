@@ -7,7 +7,8 @@ export const GET_USERS = "GET_USERS"
 const showUser = (user) => {
   return({
     type: SHOW_USER,
-    user: user
+    user: user,
+    location: user.location
   })
 }
 
@@ -26,8 +27,8 @@ const editUser = (user) => {
 }
 
 
-export const getUser = (user) => (dispatch) => {
-  userShow(user).then(user => {
+export const getUser = (id) => (dispatch) => {
+  userShow(id).then(user => {
     dispatch(showUser(user))
   })
 }

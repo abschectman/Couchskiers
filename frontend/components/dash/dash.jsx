@@ -38,7 +38,7 @@ render (){
   }
  
   if(parseInt(this.props.userId) === this.props.currentUser){
-    edit = <button className="edit-button" onSubmit={this.handleEdit}>Edit My Profile</button>
+    edit = <button className="edit-button" onClick={this.handleEdit}>Edit My Profile</button>
   } else {
     edit = [];
   }

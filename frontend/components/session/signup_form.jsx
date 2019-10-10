@@ -52,7 +52,9 @@ class SignupForm extends React.Component{
     e.preventDefault();
     this.props.clearLocations();
     this.setState({location: e.currentTarget.value})
+    if(e.currentTarget.value.length > 0){
     this.props.findLocations(e.currentTarget.value)
+    }
     // this.setState({ possibleLocations: poss})
   }
 

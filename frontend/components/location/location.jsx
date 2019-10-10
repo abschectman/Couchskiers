@@ -11,6 +11,9 @@ class Location extends React.Component{
     if(!this.props.location){
     this.props.findLocation(this.props.locationId)}
   }
+  componentDidMount() {
+      this.props.findLocation(this.props.locationId)
+  }
 
   handleHost(e){
     e.preventDefault();
@@ -28,10 +31,22 @@ class Location extends React.Component{
   }
   }
 
+    getRequest(){
+    if(this.props.location.requests){
+    return this.props.location.requests.map(req => {
+      let e = this.props.requesters[req.id].email.indexOf("@")
+      return (<li className="host-list" id={this.props.requesters[req.id].id} onClick={this.handleHost}> <img id="host-img" src="
+    " alt=""/> <span>{this.props.requesters[req.id].email.slice(0, e)}... </span></li>)
+  })} else {
+    return [];
+  }
+  }
+
 
 render(){
   if(this.props.location){
     let hosts = this.getUsers();
+    let travelers = this.getRequest();
     return (
       <main id="location-main">
         <NavContainer />
@@ -49,6 +64,15 @@ render(){
               </ul>
             </div>
         </div>
+          <div id="location-hosts">
+            <span id="hosts-header">Upcoming Visitors</span>
+            <span id="hosts-count">Meet or Host one of {travelers.length.toString()} travelers in {this.props.location.city}</span>
+            <div id="hosts-body">
+              <ul id="hosts-outer-list">
+                {travelers}
+              </ul>
+            </div>
+          </div>
         
         <div id="location-visitors">
 

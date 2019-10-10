@@ -11,6 +11,10 @@ class Location < ApplicationRecord
   through: :residents,
   source: :host_requests
 
+  has_many :reservers,
+  through: :hosting_requests,
+  source: :reserver
+
 
   def hosts
     @residents = self.residents

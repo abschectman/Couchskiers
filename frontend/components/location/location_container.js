@@ -11,7 +11,8 @@ const msp = (state, ownProps) => {
     currentUser: state.session.currentUser,
     location: state.entities.locations[ownProps.match.params.locationId],
     locationId: ownProps.match.params.locationId,
-    users: state.entities.users
+    users: state.entities.users,
+    requesters: state.entities.requesters
   };
 };
 

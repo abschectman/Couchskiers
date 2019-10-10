@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
-import {getUser} from "../../actions/user_actions"
+import {getUser} from "../../actions/user_actions";
+import {createRes} from "../../actions/reservation_actions"
 import {findLocations, clearLocations, findLocation} from "../../actions/location_actions"
 import Dash from "./dash";
 
@@ -18,6 +19,7 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return {
     logout: () => dispatch(logout()),
+    createRes: (res) => dispatch(createRes(res)),
     clearLocations: () => dispatch(clearLocations()),
     findLocation: id => dispatch(findLocation(id)),
     getUser: id => dispatch(getUser(id))

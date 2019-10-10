@@ -7,6 +7,7 @@ const reservationsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_LOCATION: {
+      debugger
       return action.requests;
     }
     default:

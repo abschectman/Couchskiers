@@ -7,9 +7,15 @@ constructor(props){
     location: "",
     myLocation: this.props.location,
     targetUser: {},
+    start_date: "",
+    end_date: "",
+    reservation_message: ""
+
   }
   this.handleEdit = this.handleEdit.bind(this)
   this.handleLink = this.handleLink.bind(this)
+  this.update = this.update.bind(this)
+  this.handleReq = this.handleReq.bind(this)
 }
 
 componentDidMount(){
@@ -27,6 +33,26 @@ componentDidMount(){
     e.preventDefault();
     this.props.history.push(`/locations/${parseInt(this.props.test)}`)
   }
+
+  handleReq(e){
+    e.preventDefault();
+    let req = {
+      start_date: this.state.start_date,
+      end_date: this.state.end_date,
+      reservation_message: this.state.reservation_message,
+      reserver_id: this.props.currentUser,
+      host_id: parseInt(this.props.userId)
+    }
+    debugger
+    this.props.createRes(req)
+  }
+
+    update(field) {
+      return e => this.setState({
+        [field]: e.currentTarget.value
+      });
+    }
+
 
 
 render (){
@@ -68,6 +94,24 @@ render (){
         </div>
         {edit}
       </div>
+
+        <div className="res-req">
+          <h1>REQUEST TO STAY</h1>
+          <form action="" onSubmit={this.handleReq}>
+            <div className="dates">
+                  <label htmlFor="">Arrival Date </label>
+                    <input type="date" value={this.state.start_date} onChange={this.update('start_date')} />
+                
+                  <label htmlFor="">Departure Date </label>
+                    <input type="date" value={this.state.end_date} onChange={this.update('end_date')} />
+                  
+            </div>
+              <label htmlFor="">Message</label>
+                <input type="textarea" value={this.state.reservation_message} onChange={this.update('reservation_message')} />
+
+                <input type="submit" value="Send"/>
+          </form>
+          </div>
 
       <div className="middle-middle">
         <span>ABOUT ME</span>

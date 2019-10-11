@@ -10,6 +10,8 @@ Avid skiers can use it to find local hosts, to host people or just to meet up.  
 3. Contains Live user communication in the form of booking requests and responses
 4. Has styled page views and easy site navigation for an enjoyable user experience
 
+## A Quick Glimpse
+
 
 ## Code-Base
 * ruby on rails

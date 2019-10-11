@@ -9,6 +9,7 @@ constructor(props){
     targetUser: {},
     start_date: "",
     end_date: "",
+    booked: false,
     reservation_message: "",
     reqStatus: "res-req-none"
 
@@ -45,6 +46,7 @@ componentDidMount(){
       start_date: this.state.start_date,
       end_date: this.state.end_date,
       reservation_message: this.state.reservation_message,
+      booked: false,
       reserver_id: this.props.currentUser,
       host_id: parseInt(this.props.userId)
     }

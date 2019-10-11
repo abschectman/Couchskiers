@@ -11,8 +11,8 @@ Avid skiers can use it to find local hosts, to host people or just to meet up.  
 4. Has styled page views and easy site navigation for an enjoyable user experience
 
 ## A Quick Glimpse
-* User Show Page[alt text](https://github.com/abschectman/Couchskiers/blob/master/app/assets/images/Screen%20Shot%202019-10-11%20at%2010.04.06%20AM.png)
-* Location show page [alt text](https://github.com/abschectman/Couchskiers/blob/master/app/assets/images/Screen%20Shot%202019-10-11%20at%2010.03.25%20AM.png)
+User Show Page[alt text](https://github.com/abschectman/Couchskiers/blob/master/app/assets/images/Screen%20Shot%202019-10-11%20at%2010.04.06%20AM.png)
+Location show page [alt text](https://github.com/abschectman/Couchskiers/blob/master/app/assets/images/Screen%20Shot%202019-10-11%20at%2010.03.25%20AM.png)
 
 ## Code-Base
 * ruby on rails

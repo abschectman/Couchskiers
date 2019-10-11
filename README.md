@@ -20,7 +20,7 @@ Avid skiers can use it to find local hosts, to host people or just to meet up.  
 * html/css
 
 ## Links
-* (https://couchskiers.herokuapp.com/#/signup "To visit the site")
+* [To visit the site](https://couchskiers.herokuapp.com/#/signup)
 * To see sample state, routes ,schema, etc (https://github.com/abschectman/Couchskiers/wiki)
 
 This README would normally document whatever steps are necessary to get the

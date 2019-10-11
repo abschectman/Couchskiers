@@ -9,17 +9,22 @@ constructor(props){
     targetUser: {},
     start_date: "",
     end_date: "",
-    reservation_message: ""
+    reservation_message: "",
+    reqStatus: "res-req-none"
 
   }
   this.handleEdit = this.handleEdit.bind(this)
   this.handleLink = this.handleLink.bind(this)
   this.update = this.update.bind(this)
-  this.handleReq = this.handleReq.bind(this)
+  this.handleReq = this.handleReq.bind(this);
+  this.toggleForm =this.toggleForm.bind(this)
 }
 
 componentDidMount(){
   this.props.getUser(parseInt(this.props.userId))
+  if (parseInt(this.props.userId) === this.props.currentUser){
+    this.setState({ reqStatus: "res-req-none"})
+  }
   // this.props.findLocation(this.props.users[this.props.userId].location_id)
 }
 
@@ -43,13 +48,22 @@ componentDidMount(){
       reserver_id: this.props.currentUser,
       host_id: parseInt(this.props.userId)
     }
-    this.props.createRes(req)
+    this.props.createRes(req).then(re => this.setState({reqStatus: "res-req-none"}))
+    
   }
 
     update(field) {
       return e => this.setState({
         [field]: e.currentTarget.value
       });
+    }
+
+    toggleForm(e){
+      e.preventDefault();
+      if(this.state.reqStatus === "res-req-none"){
+      this.setState({reqStatus: "res-req"})} else {
+        this.setState({ reqStatus: "res-req-none" })
+      }
     }
 
 
@@ -65,7 +79,7 @@ render (){
   if(parseInt(this.props.userId) === this.props.currentUser){
     edit = <button className="edit-button" onClick={this.handleEdit}>Edit My Profile</button>
   } else {
-    edit = [];
+    edit = <button className="edit-button" onClick={this.toggleForm}>Send Request</button>;
   }
   if(this.props.users[this.props.userId]) {
     view = (
@@ -94,21 +108,25 @@ render (){
         {edit}
       </div>
 
-        <div className="res-req">
+        <div className={this.state.reqStatus}>
           <h1>REQUEST TO STAY</h1>
           <form action="" onSubmit={this.handleReq}>
             <div className="dates">
+                <div id="date-cont">
                   <label htmlFor="">Arrival Date </label>
-                    <input type="date" value={this.state.start_date} onChange={this.update('start_date')} />
-                
+                  <input id="dateId" type="date" value={this.state.start_date} onChange={this.update('start_date')} />
+                  </div>
+                  <div id="date-cont">
                   <label htmlFor="">Departure Date </label>
-                    <input type="date" value={this.state.end_date} onChange={this.update('end_date')} />
-                  
+                    <input id="dateId" type="date" value={this.state.end_date} onChange={this.update('end_date')} />
+                  </div>
             </div>
-              <label htmlFor="">Message</label>
-                <input type="textarea" value={this.state.reservation_message} onChange={this.update('reservation_message')} />
 
-                <input type="submit" value="Send"/>
+            <div id="date-cont">
+              <label id="mess-head" htmlFor="">Message</label>
+                <input id="mess-text" type="textarea" value={this.state.reservation_message} onChange={this.update('reservation_message')} />
+            </div>
+                <input id="send-button" type="submit" value="Send"/>
           </form>
           </div>
 

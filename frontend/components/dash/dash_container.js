@@ -6,14 +6,17 @@ import {findLocations, clearLocations, findLocation} from "../../actions/locatio
 import Dash from "./dash";
 
 const msp = (state, ownProps) => {
-  return {
+  let ob = {
     currentUser: state.session.currentUser,
     errors: state.errors,
     locations: state.entities.locations,
     userId: ownProps.match.params.userId,
-    users: state.entities.users,
-    test: state.entities.users[ownProps.match.params.userId].location_id
-  };
+    users: state.entities.users
+  }; 
+  if (state.entities.users[ownProps.match.params.userId]){
+    ob["test"] = state.entities.users[ownProps.match.params.userId].location_id;
+  }
+  return ob;
 };
 
 const mdp = dispatch => {

@@ -7,7 +7,8 @@ const reservationsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_LOCATION: {
-      return action.requests;
+      let newState = state;
+      return Object.assign({}, newState, action.requests);
     }
     default:
       return state;

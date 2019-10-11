@@ -64,7 +64,7 @@ class Nav extends React.Component{
       displayString = this.props.locations.map(lo => <li className="dropdown" id={lo.id} key={lo.id} onClick={this.selectLocation}>{(lo.city + ", " + lo.country)}</li>)}
     return (
     <section className="show-header">
-      <img id="show-logo" alt="" />
+      <span className="title">Couchskiers</span>
       <div className="explore">
         <span>Explore</span>
         <img src="" alt="" />

@@ -281,7 +281,6 @@ list-style: none;
 }
 
 .explore > span{
-    height: 30%;
     // border-right: 1.7px solid rgba(0,0,0,0.15);
     // border-left: 1.3px solid rgba(0,0,0,0.15);
     // border-bottom: 2px solid rgba(0,0,0,0.15);
@@ -293,7 +292,6 @@ list-style: none;
 
 
 .explore-search > input{
-    height: 30%;
     // border-right: 1.7px solid rgba(0,0,0,0.15);
     // border-left: 1.3px solid rgba(0,0,0,0.15);
     // border-bottom: 1.5px solid rgba(0,0,0,0.15);
@@ -330,8 +328,7 @@ li.settings-li-shown {
 }
 
 .pro{
-  display: block;
-  padding-top: 10px;
+  
   cursor: pointer;
     // list-style-type: disc;
     // margin-block-start: 1em;

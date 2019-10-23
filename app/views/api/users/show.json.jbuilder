@@ -13,7 +13,7 @@ json.location do
     json.reference_list do
       @user.references.each do |ref|
         json.set! ref.id do
-          json.extract! ref, :id, :body, :referer_id, :subject_id
+          json.extract! ref, :id, :body, :referer_id, :subject_id, :positive
         end
       end
   end

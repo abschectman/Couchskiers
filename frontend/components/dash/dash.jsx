@@ -16,6 +16,7 @@ constructor(props){
     referenceClass: "reference-section-hidden "
 
   }
+  this.unFetched = true;
   this.handleEdit = this.handleEdit.bind(this)
   this.handleLink = this.handleLink.bind(this)
   this.update = this.update.bind(this)
@@ -30,7 +31,13 @@ componentDidMount(){
   if (parseInt(this.props.userId) === this.props.currentUser){
     this.setState({ reqStatus: "res-req-none"})
   }
-  // this.props.findLocation(this.props.users[this.props.userId].location_id)
+}
+componentDidUpdate(){
+  if (this.props.users[parseInt(this.props.userId)] && this.unFetched)
+    this.props.users[this.props.userId].references.forEach(element => {
+    this.props.getUser(element)
+  });
+  this.unFetched = false
 }
 
   toggleShow(e){
@@ -48,8 +55,12 @@ componentDidMount(){
   }
 
   handleReferences(){
-    debugger
-    return this.props.users[this.props.userId].references.map(ref => <li> {this.props.references[ref].body} </li>)
+    
+    return (this.props.users[this.props.userId].references
+      .map(ref => <div>
+        <span>{this.props.users[this.props.references[ref].referer_id].email}</span>
+        <li> {this.props.references[ref].body} </li>
+      </div>))
   }
 
   handleEdit(e) {

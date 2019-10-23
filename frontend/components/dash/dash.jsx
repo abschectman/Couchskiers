@@ -48,6 +48,7 @@ componentDidMount(){
   }
 
   handleReferences(){
+    debugger
     return this.props.users[this.props.userId].references.map(ref => <li> {this.props.references[ref].body} </li>)
   }
 
@@ -159,7 +160,7 @@ render (){
           <span onClick={this.toggleShow}>References</span>
         </div>
         <div className={this.state.referenceClass}>
-            <ul>{this.handleReferences}</ul>
+            <ul>{this.handleReferences()}</ul>
         </div>
         <div className={this.state.descriptionClass}>
               <span>{this.props.users[this.props.userId].description}</span>

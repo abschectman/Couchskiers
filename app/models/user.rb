@@ -18,6 +18,10 @@ class User < ApplicationRecord
   foreign_key: :subject_id,
   class_name: :Reference
 
+  has_many :referers,
+  through: :references,
+  source: :writer
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

@@ -33,7 +33,7 @@ componentDidMount(){
   }
 }
 componentDidUpdate(){
-  if (this.props.users[parseInt(this.props.userId)] && this.unFetched)
+  if (this.props.users[parseInt(this.props.userId).references] && this.unFetched)
     this.props.users[this.props.userId].references.forEach(element => {
     this.props.getUser(element)
   });
@@ -55,12 +55,16 @@ componentDidUpdate(){
   }
 
   handleReferences(){
-    
+    if (this.props.users[this.props.userId].references){
     return (this.props.users[this.props.userId].references
-      .map(ref => <div>
+      .map(ref => {
+        if (this.props.users[this.props.references[ref].referer_id]){
+      return (<div className="ref-list">
         <span>{this.props.users[this.props.references[ref].referer_id].email}</span>
+        <img id="host-img"/>
         <li> {this.props.references[ref].body} </li>
-      </div>))
+    </div>)}}))
+    }
   }
 
   handleEdit(e) {
@@ -171,7 +175,7 @@ render (){
           <span onClick={this.toggleShow}>References</span>
         </div>
         <div className={this.state.referenceClass}>
-            <ul>{this.handleReferences()}</ul>
+            <div className="refrences">{this.handleReferences()}</div>
         </div>
         <div className={this.state.descriptionClass}>
               <span>{this.props.users[this.props.userId].description}</span>

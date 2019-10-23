@@ -5,6 +5,7 @@ export const EDIT_USER = "EDIT_USER"
 export const GET_USERS = "GET_USERS"
 
 const showUser = (user) => {
+  debugger
   return {
     type: SHOW_USER,
     user: user,

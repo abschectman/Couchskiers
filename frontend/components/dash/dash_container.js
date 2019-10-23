@@ -11,7 +11,8 @@ const msp = (state, ownProps) => {
     errors: state.errors,
     locations: state.entities.locations,
     userId: ownProps.match.params.userId,
-    users: state.entities.users
+    users: state.entities.users,
+    references: state.entities.references
   }; 
   if (state.entities.users[ownProps.match.params.userId]){
     ob["test"] = state.entities.users[ownProps.match.params.userId].location_id;

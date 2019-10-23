@@ -1033,3 +1033,14 @@ margin-left: 25px;
     -webkit-font-smoothing: antialiased;
     margin-left: 70%;
  }
+
+ .reference-section-hidden{
+   display: none;
+ }
+
+ .reference-section{
+   height: 350px;
+   border-top: 1.5px solid rgba(0,0,0,0.15);
+    background-color: #f7f7f7;
+    border-bottom: 1.5px solid rgba(0,0,0,0.15);
+ }

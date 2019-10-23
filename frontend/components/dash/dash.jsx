@@ -12,7 +12,8 @@ constructor(props){
     booked: false,
     reservation_message: "",
     reqStatus: "res-req-none",
-    descriptionClass: "description-section"
+    descriptionClass: "description-section",
+    referenceClass: "reference-section-hidden "
 
   }
   this.handleEdit = this.handleEdit.bind(this)
@@ -21,6 +22,7 @@ constructor(props){
   this.handleReq = this.handleReq.bind(this);
   this.toggleForm =this.toggleForm.bind(this);
   this.toggleShow = this.toggleShow.bind(this);
+  this.handleReferences = this.handleReferences.bind(this);
 }
 
 componentDidMount(){
@@ -33,11 +35,21 @@ componentDidMount(){
 
   toggleShow(e){
     e.preventDefault();
-    e.currentTarget.innerText === "References" ? this.setState({ descriptionClass: "description-section-hidden" }) 
-    : this.setState({ descriptionClass: "description-section" });
+    e.currentTarget.innerText === "References" ? 
+    this.setState({
+    descriptionClass: "description-section-hidden",
+    referenceClass: "reference-section" 
+   }) 
+    : this.setState({ 
+      descriptionClass: "description-section",
+      referenceClass: "reference-section-hidden"
+     });
    
   }
 
+  handleReferences(){
+    return this.props.users[this.props.userId].references.map(ref => <li> {this.props.references[ref].body} </li>)
+  }
 
   handleEdit(e) {
     e.preventDefault();
@@ -145,6 +157,9 @@ render (){
         <div className="middle-tool">
           <span onClick={this.toggleShow}>About</span>
           <span onClick={this.toggleShow}>References</span>
+        </div>
+        <div className={this.state.referenceClass}>
+            <ul>{this.handleReferences}</ul>
         </div>
         <div className={this.state.descriptionClass}>
               <span>{this.props.users[this.props.userId].description}</span>

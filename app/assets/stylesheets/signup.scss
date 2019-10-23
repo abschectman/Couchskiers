@@ -507,9 +507,16 @@ flex-direction: column;
     background-color: #f7f7f7;
     border-bottom: 1.5px solid rgba(0,0,0,0.15);
 }
-
-.middle-middle > span{
+.middle-tool{
+  display: flex;
+  justify-content: space-around;
+}
+.middle-tool > span{
   line-height: 80px;
+  color: #287FB8;
+  font-size: inherit;
+  text-decoration: none;
+  padding-left: 15px;
 }
 
 #setting-img{
@@ -532,6 +539,10 @@ flex-direction: column;
      display: flex;
      flex-direction: column;
 
+   }
+
+   .description-section-hidden{
+     display: none;
    }
 
   #overview > span{

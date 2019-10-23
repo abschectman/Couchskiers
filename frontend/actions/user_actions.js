@@ -5,11 +5,12 @@ export const EDIT_USER = "EDIT_USER"
 export const GET_USERS = "GET_USERS"
 
 const showUser = (user) => {
-  return({
+  return {
     type: SHOW_USER,
     user: user,
-    location: user.location
-  })
+    location: user.location,
+    references: user.reference_list
+  };
 }
 
 const getsUsers = (users) => {

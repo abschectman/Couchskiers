@@ -11,14 +11,16 @@ constructor(props){
     end_date: "",
     booked: false,
     reservation_message: "",
-    reqStatus: "res-req-none"
+    reqStatus: "res-req-none",
+    descriptionClass: "description-section"
 
   }
   this.handleEdit = this.handleEdit.bind(this)
   this.handleLink = this.handleLink.bind(this)
   this.update = this.update.bind(this)
   this.handleReq = this.handleReq.bind(this);
-  this.toggleForm =this.toggleForm.bind(this)
+  this.toggleForm =this.toggleForm.bind(this);
+  this.toggleShow = this.toggleShow.bind(this);
 }
 
 componentDidMount(){
@@ -28,6 +30,13 @@ componentDidMount(){
   }
   // this.props.findLocation(this.props.users[this.props.userId].location_id)
 }
+
+  toggleShow(e){
+    e.preventDefault();
+    e.currentTarget.innerText === "References" ? this.setState({ descriptionClass: "description-section-hidden" }) 
+    : this.setState({ descriptionClass: "description-section" });
+   
+  }
 
 
   handleEdit(e) {
@@ -133,8 +142,11 @@ render (){
           </div>
 
       <div className="middle-middle">
-        <span>ABOUT ME</span>
-        <div className="description-section">
+        <div className="middle-tool">
+          <span onClick={this.toggleShow}>About</span>
+          <span onClick={this.toggleShow}>References</span>
+        </div>
+        <div className={this.state.descriptionClass}>
               <span>{this.props.users[this.props.userId].description}</span>
         </div>
       </div>

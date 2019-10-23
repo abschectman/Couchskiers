@@ -19,7 +19,7 @@ json.location do
   end
 
 json.referers do 
-    @user.referers do |ref|
+    @user.referers.each do |ref|
         json.set! ref.id do
           json.extract! ref, :email, :hosting_status, :location_id, :description, :id
         end

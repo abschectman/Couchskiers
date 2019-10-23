@@ -58,11 +58,14 @@ componentDidUpdate(){
     if (this.props.users[this.props.userId].references){
     return (this.props.users[this.props.userId].references
       .map(ref => {
-        if (this.props.users[this.props.references[ref].referer_id]){
+        if (this.props.referers[this.props.references[ref].referer_id]){
       return (<div className="ref-list">
-        <span>{this.props.users[this.props.references[ref].referer_id].email}</span>
-        <img id="host-img"/>
-        <li> {this.props.references[ref].body} </li>
+        <img id="host-img" />
+        <div>
+        <span>{this.props.referers[this.props.references[ref].referer_id].email}</span>
+        
+        <span> {this.props.references[ref].body} </span>
+        </div>
     </div>)}}))
     }
   }

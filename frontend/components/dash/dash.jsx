@@ -62,9 +62,9 @@ componentDidUpdate(){
         let message;
         
         if (this.props.referers[this.props.references[ref].referer_id]){
-          let e = this.props.referers[this.props.references[ref].referer_id].email.indexOf("@")
-          this.props.references[ref].positive ? message = `Would Stay With ${this.props.referers[this.props.references[ref].referer_id].email.slice(0, e)} Again`
-            : message = `Would Not Stay With ${this.props.referers[this.props.references[ref].referer_id].email.slice(0,e)} Again`
+          let e = this.props.users[this.props.userId].email.indexOf("@")
+          this.props.references[ref].positive ? message = `Would Stay With ${this.props.users[this.props.userId].email.slice(0, e)} Again`
+            : message = `Would Not Stay With ${this.props.users[this.props.userId].email.slice(0,e)} Again`
       return (<div className="ref-list">
         <img id="host-img" />
         <div className="ref-list-info">

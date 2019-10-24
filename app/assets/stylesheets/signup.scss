@@ -1197,3 +1197,10 @@ writing-mode:horizontal-tb;
 -webkit-rtl-ordering:logical;
 -webkit-border-image:none;
 }
+
+#ref-form > form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+}

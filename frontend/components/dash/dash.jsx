@@ -23,6 +23,7 @@ constructor(props){
   this.handleReq = this.handleReq.bind(this);
   this.toggleForm =this.toggleForm.bind(this);
   this.toggleShow = this.toggleShow.bind(this);
+  this.createRef = this.createRef.bind(this)
   this.handleReferences = this.handleReferences.bind(this);
 }
 
@@ -118,6 +119,7 @@ componentDidUpdate(){
 
     createRef(e){
       e.preventDefault();
+      this.props.history.push(`/refs/${this.props.userId}`)
     }
 
 

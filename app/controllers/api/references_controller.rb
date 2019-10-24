@@ -9,6 +9,6 @@ class Api::ReferencesController < ApplicationController
   end
 
   def ref_params 
-    params.require(:references).permit(:start_date, :end_date, :reservation_message, :host_id, :reserver_id, :booked)
+    params.require(:references).permit(:body, :referer_id, :subject_id, :positive, :ref_type)
   end
 end

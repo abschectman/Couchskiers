@@ -6,12 +6,14 @@ import Dash from "./dash/dash_container"
 import Message from "../components/chat/chat"
 import Edit from "./user/edit_user_container"
 import Location from "./location/location_container"
+import Ref from "./refer/ref_container"
 import {AuthRoute, ProtectedRoute} from "../util/route_util"
 const App = () => (
   <div>
     <AuthRoute path="/signup" component={SignUpConainer} />
     <AuthRoute path="/signup" component={Login} />
     <ProtectedRoute path="/banana/:userId" component={Edit} />
+    <ProtectedRoute path="/refs/:userId" component={Ref} />
     <ProtectedRoute exact path="/users/:userId" component={Dash} />
     <Route path="/locations/:locationId" component={Location} />
     <Route path="/messages" component={Message} />

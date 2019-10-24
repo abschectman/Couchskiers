@@ -422,7 +422,7 @@ flex-direction: column;
     -moz-appearance: none;
     -webkit-appearance: none;
     -webkit-font-smoothing: antialiased;
-    margin-left: 30%;
+    margin-left: 15px;
 }
 
 .edit-button > a{
@@ -657,6 +657,12 @@ flex-direction: column;
     -webkit-font-smoothing: antialiased;
     margin-right: 20px;
 }
+
+#buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
 
 #descript{
   display: flex;

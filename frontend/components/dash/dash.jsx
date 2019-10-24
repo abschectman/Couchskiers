@@ -116,12 +116,17 @@ componentDidUpdate(){
       }
     }
 
+    createRef(e){
+      e.preventDefault();
+    }
+
 
 
 render (){
   let edit = [];
   let view;
   let loc;
+  let refer = [];
   if(this.props.locations[this.props.test]){
     loc = this.props.locations[this.props.test].city + ", " + this.props.locations[this.props.test].country
   }
@@ -130,7 +135,7 @@ render (){
     edit = <button className="edit-button" onClick={this.handleEdit}>Edit My Profile</button>
   } else {
     edit = <button className="edit-button" onClick={this.toggleForm}>Send Request</button>;
-    refer = <button className="edit-button" onClick={this.toggleForm}>Write Reference</button>
+    refer = <button className="edit-button" onClick={this.createRef}>Write Reference</button>
   }
   if(this.props.users[this.props.userId]) {
     view = (
@@ -156,7 +161,10 @@ render (){
             <span className="show-host">{this.props.users[this.props.userId].hosting_status}</span>
         <span className="login-time">Last login today</span>
         </div>
+        <div id="buttons">
         {edit}
+        {refer}
+        </div>
       </div>
 
         <div className={this.state.reqStatus}>

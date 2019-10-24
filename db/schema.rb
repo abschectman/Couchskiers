@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_130843) do
+ActiveRecord::Schema.define(version: 2019_10_24_125735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_130843) do
     t.boolean "positive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ref_type"
     t.index ["referer_id"], name: "index_references_on_referer_id"
     t.index ["subject_id"], name: "index_references_on_subject_id"
   end

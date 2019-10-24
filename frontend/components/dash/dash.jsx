@@ -58,13 +58,21 @@ componentDidUpdate(){
     if (this.props.users[this.props.userId].references){
     return (this.props.users[this.props.userId].references
       .map(ref => {
+        let message;
+        
         if (this.props.referers[this.props.references[ref].referer_id]){
+          let e = this.props.referers[this.props.references[ref].referer_id].email.indexOf("@")
+          this.props.references[ref].positive ? message = `Would Stay With ${this.props.referers[this.props.references[ref].referer_id].email.slice(0, e)} Again`
+            : message = `Would Not Stay With ${this.props.referers[this.props.references[ref].referer_id].email.slice(0,e)} Again`
       return (<div className="ref-list">
         <img id="host-img" />
-        <div>
-        <span>{this.props.referers[this.props.references[ref].referer_id].email}</span>
-        
-        <span> {this.props.references[ref].body} </span>
+        <div className="ref-list-info">
+        <span id="ref-email">{this.props.referers[this.props.references[ref].referer_id].email}</span>
+        <span id="ref-loc">{this.props.locations[this.props.referers[this.props.references[ref].referer_id].location_id].city
+            + ", " + this.props.locations[this.props.referers[this.props.references[ref].referer_id].location_id].country}</span>
+          <span id="ref-member">Member since 2019</span>
+          <span id={message.split(" ")[1]}>{message}</span>
+          <span id="ref-body"> {this.props.references[ref].body} </span>
         </div>
     </div>)}}))
     }
@@ -122,6 +130,7 @@ render (){
     edit = <button className="edit-button" onClick={this.handleEdit}>Edit My Profile</button>
   } else {
     edit = <button className="edit-button" onClick={this.toggleForm}>Send Request</button>;
+    refer = <button className="edit-button" onClick={this.toggleForm}>Write Reference</button>
   }
   if(this.props.users[this.props.userId]) {
     view = (

@@ -12,11 +12,13 @@ class User < ApplicationRecord
 
   has_many :host_requests,
   foreign_key: :host_id,
-  class_name: :Reservation
+  class_name: :Reservation,
+  dependent: :destroy
 
   has_many :references,
   foreign_key: :subject_id,
-  class_name: :Reference
+  class_name: :Reference,
+  dependent: :destroy
 
   has_many :referers,
   through: :references,

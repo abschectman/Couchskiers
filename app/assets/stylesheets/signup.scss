@@ -1204,3 +1204,12 @@ writing-mode:horizontal-tb;
     justify-content: space-between;
     height: 350px;
 }
+
+.ref-errors{
+    color: #3e1214;
+  // background-color: #f1cdd0;
+  padding: 15px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}

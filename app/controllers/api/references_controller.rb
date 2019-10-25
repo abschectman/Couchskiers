@@ -4,7 +4,7 @@ class Api::ReferencesController < ApplicationController
      if @reference.save
       render json: @reference
     else
-      render json: @reference.errors.full_messages, status: 422
+      render json: ["One Review per Subject"], status: 422
     end
   end
 

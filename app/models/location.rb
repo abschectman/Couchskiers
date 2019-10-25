@@ -15,6 +15,11 @@ class Location < ApplicationRecord
   through: :hosting_requests,
   source: :reserver
 
+  has_many :references,
+  foreign_key: :subject_id,
+  class_name: :Reference,
+  dependent: :destroy
+
 
   def hosts
     @residents = self.residents

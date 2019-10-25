@@ -9,7 +9,8 @@ class Ref extends React.Component {
       positive: true,
       ref_type: "host",
       yes: "",
-      no: ""
+      no: "",
+      errors: []
     }
     this.handleUpdate = this.handleUpdate.bind(this)
     this.handlePositive = this.handlePositive.bind(this)
@@ -43,13 +44,15 @@ class Ref extends React.Component {
     let ref = this.state;
     ref["referer_id"] = this.props.currentUser,
     ref["subject_id"] = parseInt(this.props.userId)
-    this.props.createRef(ref)
-    this.props.history.push(`/users/${this.props.userId}`)
+    this.props.createRef(ref).then((yay) => {
+      this.props.history.push(`/users/${this.props.userId}`)}, (err) =>{
+        this.setState({errors: err.errors})
+      })
+    
   }
 
   render(){
     let email;
-    let errors = [];
     this.props.users[this.props.userId] ? email = this.props.users[this.props.userId].email
     : email = [];
     return (
@@ -74,7 +77,7 @@ class Ref extends React.Component {
             <input id ="ref-text" type="textarea" value={this.state.body} onChange={this.handleUpdate("body")} />
             <button className="edit-button-page" onClick={this.submit}>Submit</button>
           </form>
-          <span>{errors}</span>
+          <span className="ref-errors">{this.state.errors}</span>
         </div>
       </main>
     )

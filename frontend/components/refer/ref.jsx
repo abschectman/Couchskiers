@@ -62,11 +62,11 @@ class Ref extends React.Component {
           <form action="">
             <span>Would you recommend {email} ? </span>
               <div>
-              <input value={true} type="radio" onChange={this.handlePositive} checked={this.state.yes}/>
+              <input value={true} type="checkbox" onChange={this.handlePositive} checked={this.state.yes}/>
                 <label>Yes, I'd recommend</label>
               </div>
             <div>
-              <input value={false} type="radio" onChange={this.handlePositive} checked={this.state.no}/>
+              <input value={false} type="checkbox" onChange={this.handlePositive} checked={this.state.no}/>
               <label>No, I wouldn't recommend</label>
             </div>
             <span>

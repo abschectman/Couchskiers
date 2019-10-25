@@ -86,6 +86,9 @@ class Edit extends React.Component {
             <label id="descript" htmlFor="">About Me
          <input type="textarea" value={this.state.description} onChange={this.handleUpdate("description")} />
             </label>
+            <label htmlFor=""> Upload Profile Picture:
+            <input type="file" onChange={this.handleUpdate("photo")}/>
+              </label>
           </form>
       </section>
         </section>

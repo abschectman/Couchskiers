@@ -10,6 +10,8 @@ class User < ApplicationRecord
   foreign_key: :location_id,
   class_name: :Location
 
+  has_one_attached :photo
+  
   has_many :host_requests,
   foreign_key: :host_id,
   class_name: :Reservation,

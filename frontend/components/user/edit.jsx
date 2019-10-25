@@ -5,6 +5,7 @@ class Edit extends React.Component {
     super(props)
     this.state = {
       id: this.props.currentUser,
+      photo: "",
       email: this.props.users[this.props.currentUser].email,
       description: this.props.users[this.props.currentUser].description,
       hosting_status: this.props.users[this.props.currentUser].hosting_status
@@ -24,11 +25,15 @@ class Edit extends React.Component {
 
   change(e){
     e.preventDefault();
+    const userForm = new FormData();
     let h = document.getElementById("ddlViewBy");
     let hosting = h.options[h.selectedIndex].text;
-    let user = this.state
-    user["hosting_status"] = hosting;
-    this.props.changeUser(user).then(user => (this.props.history.push(`/users/${this.props.currentUser}`)))
+    let userOb = this.state
+    userOb["hosting_status"] = hosting;
+    for (let key in userOb) {
+      userForm.append(`user[${key}]`, userOb[key])
+    }
+    this.props.changeUser(userForm, userOb.id).then(user => (this.props.history.push(`/users/${this.props.currentUser}`)))
   }
 
   cancel(e){

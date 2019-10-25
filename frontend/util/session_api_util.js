@@ -37,11 +37,13 @@ export const userShow = (id) => {
   })
 }
 
-export const patchUser = (user) => {
+export const patchUser = (user, id) => {
   return $.ajax({
     method: "PATCH",
-    url: `api/users/${user.id}`,
-    data: {user}
+    url: `api/users/${id}`,
+    data: user,
+    contentType: false,
+    processData: false
   })
 }
 

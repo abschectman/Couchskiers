@@ -26,7 +26,7 @@ const mdp = dispatch => {
     clearLocations: () => dispatch(clearLocations()),
     findLocation: id => dispatch(findLocation(id)),
     getUser: id => dispatch(getUser(id)),
-    changeUser: user => dispatch(changeUser(user))
+    changeUser: (user, id) => dispatch(changeUser(user, id))
   };
 };
 

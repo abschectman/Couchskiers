@@ -35,8 +35,8 @@ export const getUser = (id) => (dispatch) => {
   })
 }
 
-export const changeUser = (user) => (dispatch) => {
-  return patchUser(user).then(user => {
+export const changeUser = (user, id) => (dispatch) => {
+  return patchUser(user, id).then(user => {
     dispatch(editUser(user))
   })
 }

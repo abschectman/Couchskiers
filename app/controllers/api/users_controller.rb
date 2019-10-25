@@ -40,4 +40,8 @@ private
   def user_params
     params.require(:user).permit(:email, :password, :hosting_status, :description, :location_id)
   end
+
+  # def user_edit_params
+  #   params.permit(:email, :password, :hosting_status, :description, :location_id)
+  # end
 end

@@ -12,8 +12,14 @@ class Edit extends React.Component {
     }
     this.change = this.change.bind(this)
     this.handleUpdate = this.handleUpdate.bind(this)
+    this.handlePhoto = this.handlePhoto.bind(this)
     this.hostingOptions = this.hostingOptions.bind(this);
     this.cancel = this.cancel.bind(this)
+  }
+
+  handlePhoto(e){
+    let file = e.currentTarget.files[0];
+    this.setState({photo: file})
   }
 
 
@@ -87,7 +93,7 @@ class Edit extends React.Component {
          <input type="textarea" value={this.state.description} onChange={this.handleUpdate("description")} />
             </label>
             <label htmlFor=""> Upload Profile Picture:
-            <input type="file" onChange={this.handleUpdate("photo")}/>
+            <input type="file" onChange={this.handlePhoto}/>
               </label>
           </form>
       </section>

@@ -36,7 +36,7 @@ class Edit extends React.Component {
   //     this.updateNeed = false
   //   }
   // }
-  
+
   handlePhoto(e){
     let file = e.currentTarget.files[0];
     this.setState({photo: file})
@@ -56,6 +56,7 @@ class Edit extends React.Component {
     let hosting = h.options[h.selectedIndex].text;
     let userOb = this.state
     userOb["hosting_status"] = hosting;
+
     for (let key in userOb) {
       userForm.append(`user[${key}]`, userOb[key])
     }

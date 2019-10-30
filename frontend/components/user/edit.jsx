@@ -8,15 +8,35 @@ class Edit extends React.Component {
       photo: "",
       email: this.props.users[this.props.currentUser].email,
       description: this.props.users[this.props.currentUser].description,
-      hosting_status: this.props.users[this.props.currentUser].hosting_status
+      hosting_status: this.props.users[this.props.currentUser].hosting_status,
+      profile: this.props.users[this.props.currentUser].photo,
+      img: "left-img"
     }
+    this.updateNeed = true;
     this.change = this.change.bind(this)
     this.handleUpdate = this.handleUpdate.bind(this)
     this.handlePhoto = this.handlePhoto.bind(this)
     this.hostingOptions = this.hostingOptions.bind(this);
     this.cancel = this.cancel.bind(this)
   }
+  componentDidMount(){
+    this.props.getUser(parseInt(this.props.currentUser))
+    if(this.state.profile){
+      let h = document.getElementById("user-img")
+      h.innerHTML = this.state.profile
+      this.setState({img: "nope"})
+    }
+  }
 
+  // componentDidUpdate(){
+  //   if (this.state.profile && this.updateNeed) {
+  //     let h = document.getElementById("user-img")
+  //     h.innerHTML = this.state.profile
+  //     this.setState({ img: "nope" })
+  //     this.updateNeed = false
+  //   }
+  // }
+  
   handlePhoto(e){
     let file = e.currentTarget.files[0];
     this.setState({photo: file})
@@ -68,7 +88,8 @@ class Edit extends React.Component {
 
         <section id="edit-outer">
       <section className="edit-left">
-        <img className="left-img" src="" alt=""/>
+        <div id="user-img"></div>
+        <img className={this.state.img} src="" alt=""/>
         <div id="overview">
           <span>OVERVIEW</span>
           <li>Member since 2019</li>

@@ -6,6 +6,10 @@ json.location do
     end
   end
 
+    if @user.photo.attached?
+    json.photo image_tag(@user.photo)
+    end
+
   json.references do
     json.array! @user.reference_ids
     end

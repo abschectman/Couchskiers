@@ -13,9 +13,10 @@ constructor(props){
     reservation_message: "",
     reqStatus: "res-req-none",
     descriptionClass: "description-section",
-    referenceClass: "reference-section-hidden "
+    referenceClass: "reference-section-hidden " 
 
   }
+  this.img = "res-req-none"
   this.unFetched = true;
   this.handleEdit = this.handleEdit.bind(this)
   this.handleLink = this.handleLink.bind(this)
@@ -32,13 +33,21 @@ componentDidMount(){
   if (parseInt(this.props.userId) === this.props.currentUser){
     this.setState({ reqStatus: "res-req-none"})
   }
+  if (document.getElementById("user-img")) {
+    let h = document.getElementById("user-img")
+    this.props.profile === undefined
+      ? this.img = "user-img-def"
+      : h.innerHTML = this.props.profile
+  }
 }
+
 componentDidUpdate(){
-  if (this.props.users[parseInt(this.props.userId).references] && this.unFetched)
-    this.props.users[this.props.userId].references.forEach(element => {
-    this.props.getUser(element)
-  });
-  this.unFetched = false
+  if (document.getElementById("user-img")) {
+    let h = document.getElementById("user-img")
+    this.props.profile === undefined
+      ? this.img = "user-img-def"
+      : h.innerHTML = this.props.profile
+  } 
 }
 
   toggleShow(e){
@@ -54,6 +63,7 @@ componentDidUpdate(){
      });
    
   }
+
 
   handleReferences(){
     if (this.props.users[this.props.userId].references){
@@ -140,33 +150,38 @@ render (){
     refer = <button className="edit-button" onClick={this.createRef}>Write Reference</button>
   }
   if(this.props.users[this.props.userId]) {
+    
     view = (
       
     <main className="show">
         <NavContainer />
+
     <section className="show-body">
+
     <section className="show-left">
-          <img id="user-img"></img>
+      <div id="user-img"><img id={this.img} alt=""/></div>
       <span>{this.props.users[this.props.userId].email}</span>
-            <a id="loc-link" onClick={this.handleLink}href="">{loc}</a>
-        
-        <span id="profile">Profile not Verified</span>
+      <a id="loc-link" onClick={this.handleLink}href="">{loc}</a>
+      <span id="profile">Profile not Verified</span>
         <li id="list-li">Payment not verified</li>
-          <li id="list-li">Phone not verified</li>
-          <li id="list-li">Government ID not verfied</li>
-          <li id="list-li">Address not verified</li>
+        <li id="list-li">Phone not verified</li>
+        <li id="list-li">Government ID not verfied</li>
+        <li id="list-li">Address not verified</li>
     </section>
 
     <section className="show-middle">
       <div className="middle-top">
+        
         <div className="top-left">
-            <span className="show-host">{this.props.users[this.props.userId].hosting_status}</span>
-        <span className="login-time">Last login today</span>
+          <span className="show-host">{this.props.users[this.props.userId].hosting_status}</span>
+          <span className="login-time">Last login today</span>
         </div>
+        
         <div id="buttons">
         {edit}
         {refer}
         </div>
+
       </div>
 
         <div className={this.state.reqStatus}>

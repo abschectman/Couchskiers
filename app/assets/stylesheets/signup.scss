@@ -484,15 +484,24 @@ flex-direction: column;
    }
 
    #user-img{
-    background-image: image-url("userimg.png");
     margin-bottom: 16px;
-    height: 100px;
-    width: 100px;
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: left center;
     border: none;
     margin-top: 10px;
+   }
+
+   #user-img-def{
+    background-image: image-url("userimg.png");
+    margin-bottom: 16px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    border: none;
+    margin-top: 10px;
+    height: 100px;
+    width: 100px;
    }
 
    #show-logo{
@@ -1213,4 +1222,8 @@ writing-mode:horizontal-tb;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+}
+
+.nope{
+  display: none;
 }

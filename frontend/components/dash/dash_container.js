@@ -17,6 +17,7 @@ const msp = (state, ownProps) => {
   }; 
   if (state.entities.users[ownProps.match.params.userId]){
     ob["test"] = state.entities.users[ownProps.match.params.userId].location_id;
+    ob["profile"] = state.entities.users[ownProps.match.params.userId].photo;
   }
   return ob;
 };

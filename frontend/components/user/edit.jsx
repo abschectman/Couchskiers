@@ -13,6 +13,7 @@ class Edit extends React.Component {
       img: "left-img"
     }
     this.updateNeed = true;
+    this.profileMessage = "Upload Profile Picture:"
     this.change = this.change.bind(this)
     this.handleUpdate = this.handleUpdate.bind(this)
     this.handlePhoto = this.handlePhoto.bind(this)
@@ -25,6 +26,7 @@ class Edit extends React.Component {
       let h = document.getElementById("user-img")
       h.innerHTML = this.state.profile
       this.setState({img: "nope"})
+      this.profileMessage = "Change Profile Picture:"
     }
   }
 
@@ -114,7 +116,7 @@ class Edit extends React.Component {
             <label id="descript" htmlFor="">About Me
          <input type="textarea" value={this.state.description} onChange={this.handleUpdate("description")} />
             </label>
-            <label htmlFor=""> Upload Profile Picture:
+            <label htmlFor=""> {this.profileMessage}
             <input type="file" onChange={this.handlePhoto}/>
               </label>
           </form>

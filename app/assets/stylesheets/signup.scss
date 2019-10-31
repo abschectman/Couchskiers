@@ -1296,11 +1296,18 @@ writing-mode:horizontal-tb;
 
 .container{
   display: flex;
+  color: #27374c;
   justify-content: space-between;
 }
 .container > li{
   display: flex;
+  color: #27374c;
   flex-direction: column;
   padding: 10px;
   align-items: center;
+}
+
+.container > li > a{
+    color: #27374c;
+    text-decoration: none;
 }

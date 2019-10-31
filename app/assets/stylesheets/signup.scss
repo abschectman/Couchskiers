@@ -94,6 +94,8 @@ font-weight: normal;
 .head{
 height: 60px;
 border-bottom: 2px solid rgba(0,0,0,0.15);
+display: flex;
+align-items: center;
 }
 
 h3{
@@ -197,26 +199,51 @@ h3{
 }
 
 .login{
-  background-color: white;
-  color: #27374c;
-  margin-left: 10px;
-  border-radius: 4px;
-  margin-top: 8px;
-  padding: 8px;
-  height: 40px;
-  width: 60px;
-  font-size: 15px;
+    background-color:  #fff;
+    border: 1px solid #287FB8;
+    border-radius: 3px;
+    color:#287FB8;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    max-width: 240px;
+    min-width: 6em;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    white-space: normal;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
 }
 
 .join{
-  background-color: #27374c;
-  color: white;
-  margin-left: 70%;
-  border-radius: 4px;
-   padding: 8px;
-  height: 40px;
-  width: 60px;
-  font-size: 15px;
+    background-color: #287FB8;
+    border: 1px solid #287FB8;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    max-width: 240px;
+    min-width: 6em;
+    margin-left: 60%;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    white-space: normal;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
 }
 
 .login:hover{
@@ -1265,4 +1292,15 @@ writing-mode:horizontal-tb;
 
 .nope{
   display: none;
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+.container > li{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import SignupNavContainer from "./signup_nav_container"
+
 class SignupForm extends React.Component{
   constructor(props){
     super(props);
@@ -11,7 +13,6 @@ class SignupForm extends React.Component{
       hosting_status: "Not Accepting Guests"
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.openModal = this.props.openModal.bind(this);
     this.modaling = this.modaling.bind(this);
     this.closer = this.closer.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
@@ -82,13 +83,7 @@ class SignupForm extends React.Component{
 
    return (
        <main>
-         <section className="head">
-           <span className="title">couchskiers</span>
-
-          <input className="join" type="submit" value="Join" onClick={this.closer}/>
-         <input className="login" type="submit" value="Log In" onClick={this.modaling} />
-
-          </section>
+       <SignupNavContainer />
 
          <section className="auth-info">
            <span className="local">Ski with Locals and Meet Travelers</span>

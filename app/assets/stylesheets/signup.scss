@@ -68,6 +68,7 @@ font-weight: normal;
 .first-name > input{
   margin-top: 10px;
   height: 40px;
+  font-size: 15px;
   width: 105px;
   border-radius: 4px;
   box-shadow: none;
@@ -81,6 +82,7 @@ font-weight: normal;
   margin-top: 10px;
   height: 40px;
   width: 105px;
+  font-size: 15px;
   border-radius: 4px;
   box-shadow: none;
   border-width: 1px;
@@ -119,6 +121,7 @@ h3{
   margin-top: 10px;
   border-radius: 4px;
   height: 40px;
+  font-size: 15px;
   border-width: 1px;
   border-style: solid;
   border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
@@ -578,6 +581,7 @@ flex-direction: column;
 
    .edit-left{
     display: flex;
+    margin-top: 20px;
     flex-direction: column;
     border-bottom: 2px solid #bfcad2;
     background-color: white;

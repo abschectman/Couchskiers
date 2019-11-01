@@ -45,7 +45,7 @@ class Nav extends React.Component{
     e.preventDefault();
     this.props.clearLocations();
     this.setState({ location: e.currentTarget.value })
-    this.props.findLocations(e.currentTarget.value)
+    if(e.currentTarget.value.length > 0) {this.props.findLocations(e.currentTarget.value)}
   }
 
   handleEdit(e) {
@@ -67,9 +67,9 @@ class Nav extends React.Component{
       <span className="title">Couchskiers</span>
       <div className="explore">
         <span>Explore</span>
-        <img src="" alt="" />
+        <i class="fas fa-search"></i>
         <div className="explore-search">
-          <input onChange={this.handleLocation} type="text" value={this.state.location} />
+          <input onChange={this.handleLocation} type="text" placeholder="Where are you going?" value={this.state.location} />
           <ul className="dis-list">{displayString}</ul>
         </div>
       </div>

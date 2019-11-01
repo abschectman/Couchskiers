@@ -257,7 +257,8 @@ h3{
 .title{
     font-family: papyrus;
     color: #D4490B;
-    margin: 10px;
+    position: absolute;
+    left: 15px;
     cursor: pointer;
     font-size: 20px;
 }
@@ -317,7 +318,7 @@ list-style: none;
 
 .show-header{
      display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     // position: absolute;
     width: 100%;
@@ -328,6 +329,8 @@ list-style: none;
 
 .explore{
   display: flex;
+  position: absolute;
+  left: 250px;
     // list-style-type: disc;
     // margin-block-start: 1em;
     // margin-block-end: 1em;
@@ -364,7 +367,7 @@ list-style: none;
 }
 .lis-count{
     position: absolute;
-    top: 62px;
+    top: 42px;
     padding: 0px;
         margin-bottom: 0;
     color: #27374c;
@@ -514,6 +517,9 @@ flex-direction: column;
   flex-direction: column;
   // justify-content: left;
   padding: 0px;
+  width: 100px;
+  position: absolute;
+  height: 50px;
 }
 
 
@@ -575,26 +581,35 @@ flex-direction: column;
     height: 50px;
     width: 50px;
    }
-   .middle-middle{
-     background-color: white;
-   border-bottom: 1.5px solid rgba(0,0,0,0.15);
-  }
       
   .description-section{
-    border-top: 1.5px solid rgba(0,0,0,0.15);
+    margin-top: 20px;
     background-color: #f7f7f7;
     border-bottom: 1.5px solid rgba(0,0,0,0.15);
 }
 .middle-tool{
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  background-color: #f7f7f7;
+  height: 100px;
+  border-bottom: 1.5px solid rgba(0,0,0,0.15);
 }
-.middle-tool > span{
-  line-height: 80px;
+
+.ref-div > span{
   color: #287FB8;
   font-size: inherit;
   text-decoration: none;
-  padding-left: 15px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.abt-div > span{
+  padding: 5px;
+  color: #287FB8;
+  font-size: inherit;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -1310,4 +1325,18 @@ writing-mode:horizontal-tb;
 .container > li > a{
     color: #27374c;
     text-decoration: none;
+}
+
+.badge{
+  background-color: #287FB8;
+    border-radius: 3.75em;
+    color: #fff;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: bold;
+    line-height: 1;
+    padding: 4px 7px;
+    margin: 0;
+    height: 13px;
+    vertical-align: 1px;
 }

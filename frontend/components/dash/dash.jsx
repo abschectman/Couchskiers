@@ -13,9 +13,9 @@ constructor(props){
     reservation_message: "",
     reqStatus: "res-req-none",
     descriptionClass: "description-section",
-    referenceClass: "reference-section-hidden " 
-
+    referenceClass: "reference-section-hidden"
   }
+  this.refCount = 0;
   this.img = "res-req-none"
   this.unFetched = true;
   this.handleEdit = this.handleEdit.bind(this)
@@ -139,6 +139,7 @@ render (){
   let view;
   let loc;
   let refer = [];
+  if (this.props.users[this.props.userId].references) { this.refCount = this.refCount = this.props.users[this.props.userId].references.length}
   if(this.props.locations[this.props.test]){
     loc = this.props.locations[this.props.test].city + ", " + this.props.locations[this.props.test].country
   }
@@ -208,8 +209,13 @@ render (){
 
       <div className="middle-middle">
         <div className="middle-tool">
-          <span onClick={this.toggleShow}>About</span>
-          <span onClick={this.toggleShow}>References</span>
+          <div className="abt-div">
+            <span onClick={this.toggleShow}>About</span>
+          </div>
+          <div className="ref-div">
+            <span onClick={this.toggleShow}>References</span>
+            <p className="badge">{this.refCount}</p>
+          </div>
         </div>
         <div className={this.state.referenceClass}>
             <div className="refrences">{this.handleReferences()}</div>

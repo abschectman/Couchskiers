@@ -139,7 +139,7 @@ render (){
   let view;
   let loc;
   let refer = [];
-  if (this.props.users[this.props.userId].references) { this.refCount = this.refCount = this.props.users[this.props.userId].references.length}
+  if (this.props.users[this.props.userId] && this.props.users[this.props.userId].references) { this.refCount = this.refCount = this.props.users[this.props.userId].references.length}
   if(this.props.locations[this.props.test]){
     loc = this.props.locations[this.props.test].city + ", " + this.props.locations[this.props.test].country
   }

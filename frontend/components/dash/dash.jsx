@@ -177,7 +177,11 @@ render (){
           <span className="show-host">{this.props.users[this.props.userId].hosting_status}</span>
           <span className="login-time">Last login today</span>
         </div>
-        
+
+        <div id="space">
+
+        </div>
+
         <div id="buttons">
         {edit}
         {refer}

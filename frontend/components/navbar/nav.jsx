@@ -76,24 +76,22 @@ class Nav extends React.Component{
         <ul class="container">
           
           <li><a href="https://www.linkedin.com/in/asher-schectman-b24a2b195?trk=people-guest_profile-result-card_result-card_full-click"
-            target="_blank" class="fab fa-linkedin fa-2x"></a> <a
-              href="https://www.linkedin.com/in/asher-schectman-b24a2b195?trk=people-guest_profile-result-card_result-card_full-click"
-              target="_blank">LinkedIn</a></li>
+            target="_blank"><i class="fab fa-linkedin fa-2x"></i><span>Linked In</span></a> </li>
 
-          <li><a href="https://angel.co/asher-schectman" target="_blank" class="fab fa-angellist fa-2x"></a>
-            <a href="https://angel.co/asher-schectman" target="_blank">AngelList </a></li>
+          <li><a href="https://angel.co/asher-schectman" target="_blank"><i class="fab fa-angellist fa-2x"></i><span>AngelList</span></a>
+            </li>
 
-          <li><a href="https://github.com/abschectman" target="_blank" class="fab fa-github-square fa-2x"></a>
-            <a href="https://github.com/abschectman" target="_blank">Github</a></li>
+          <li><a href="https://github.com/abschectman" target="_blank"><i class="fab fa-github-square fa-2x"></i><span>Github</span></a>
+          </li>
 
-          <li><a href="https://abschectman.github.io/" target="_blank" class="fas fa-laptop-code fa-2x"></a>
-            <a href="https://abschectman.github.io/" target="_blank">Website</a></li>
+          <li><a href="https://abschectman.github.io/" target="_blank"><i class="fas fa-laptop-code fa-2x"></i><span>Website</span></a>
+            </li>
 
-          <li><a href="" target="_blank" class="fas fa-user-circle fa-2x" onClick={this.handleShow}></a>
-            <a href="" target="_blank" onClick={this.handleShow}>Profile</a></li>
+          <li><a href="" target="_blank" onClick={this.handleShow}><i class="fas fa-user-circle fa-2x"></i><span>Profile</span></a>
+           </li>
 
-          <li><a href="" target="_blank" class="fas fa-cog fa-2x" onClick={this.showList}></a>
-            <a href="" target="_blank" onClick={this.showList}>Settings</a></li>
+          <li><a href="" target="_blank" onClick={this.showList}><i class="fas fa-cog fa-2x"></i><span>Settings</span></a>
+            </li>
         </ul>
         <ul className="head-settings" onClick={this.showList}> <img id="setting-img" alt="" /> 
           <ul className={this.state.hiddenSetting}>

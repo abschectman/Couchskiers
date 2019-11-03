@@ -283,7 +283,7 @@ list-style: none;
   z-index: 1;
   list-style: none;
   height: 30px;
-  width: 200px;
+  width: 250px;
   margin-right: 30px;
   background-color: white;
   border: 0.1px solid rgba(0,0,0,0.1);
@@ -331,7 +331,8 @@ list-style: none;
   display: flex;
   position: absolute;
   align-items: center;
-  left: 250px;
+  left: 160px;
+  width: 379px;
   border: none;
   border-radius: 4px 4px 4px 4px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
@@ -349,7 +350,15 @@ list-style: none;
     // border-left: 1.3px solid rgba(0,0,0,0.15);
     // border-bottom: 2px solid rgba(0,0,0,0.15);
   padding: 10px;
+  font-size: 15px;
+  font-weight: lighter;
+      font-feature-settings: 'kern', 'liga', 'pnum';
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   border-right: 1px solid #a1acb8;
+}
+
+#space{
+  width: 40%
 }
 
 
@@ -471,6 +480,7 @@ flex-direction: column;
     display: inline-block;
     font-size: 15px;
     font-weight: bold;
+    height: 45px;
     line-height: 1.5;
     max-width: 240px;
     min-width: 6em;
@@ -505,6 +515,7 @@ flex-direction: column;
 .dis-list{
   position: absolute;
   top: 22px;
+  left: 80px;
 }
 
 .head-settings:hover{
@@ -558,7 +569,7 @@ flex-direction: column;
    #user-img > img{
      height: 180px;
      border-radius: 50%;
-    width: 180px;
+    // width: 180px;
     padding-left: 50px;
     padding-right: 50px;
    }
@@ -566,7 +577,7 @@ flex-direction: column;
    #user-img-def{
     background-image: image-url("userimg.png");
     margin-bottom: 16px;
-    background-size: 100px;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: left center;
     border: none;
@@ -1141,7 +1152,7 @@ margin-left: 25px;
 
  .reference-section{
    height: 400px;
-   margin-top: 15px;
+   margin-top: 20px;
     background-color: white;
     border-bottom: 1.5px solid rgba(0,0,0,0.15);
  }
@@ -1317,14 +1328,28 @@ writing-mode:horizontal-tb;
 .container > li{
   display: flex;
   color: #27374c;
-  flex-direction: column;
+  // flex-direction: column;
   padding: 10px;
   align-items: center;
 }
+.container > li:hover{
+  color: #ED6504;
+}
 
 .container > li > a{
-    color: #27374c;
-    text-decoration: none;
+  display: flex;
+  color: #27374c;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.container > li > a >span{
+    font-feature-settings: 'kern', 'liga', 'pnum';
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 12px;
+    padding-top: 5px;
 }
 
 .container > li > a:hover{

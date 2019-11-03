@@ -495,6 +495,10 @@ flex-direction: column;
     margin-left: 15px;
 }
 
+.edit-button:hover{
+  background-color: rgb(35, 113, 163);
+}
+
 .edit-button > a{
   color: white;
   text-decoration: none;
@@ -608,21 +612,36 @@ flex-direction: column;
 }
 
 .ref-div > span{
-  color: #287FB8;
+  // color: #287FB8;
   font-size: inherit;
   text-decoration: none;
   cursor: pointer;
   padding: 5px;
+}
+
+.ref-div{
+  color: #287FB8
+}
+
+.ref-div:hover{
+  color:  #ED6504;
 }
 
 .abt-div > span{
   padding: 5px;
-  color: #287FB8;
+
   font-size: inherit;
   text-decoration: none;
   cursor: pointer;
 }
 
+.abt-div{
+  color: #287FB8;
+}
+
+.abt-div:hover{
+  color:  #ED6504;
+}
 #setting-img{
   // position: absolute;
   background-image: image-url("settings.webp");

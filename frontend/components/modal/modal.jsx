@@ -50,8 +50,9 @@ class Modal extends React.Component {
       <section className="auth-info-modal">
         <form onSubmit={this.handleSubmit} className="signin" >
           <button type="button" className="exit" onClick={this.closer}>X</button>
+          <div id="modal-top">
           <h3>Log in to Couchsurfing</h3>
-          
+          </div>
           {cont}
             <input placeholder="Email or Username" type="email" value={this.state.email} onChange={this.update('email')} />
 

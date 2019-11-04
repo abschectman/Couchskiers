@@ -10,6 +10,10 @@ class Reservation < ApplicationRecord
     foreign_key: :reserver_id,
     class_name: :User
 
+    has_one :channel,
+    foreign_key: :channel_id,
+    class_name: :Channel
+
   has_many :messages,
     foreign_key: :reservation_id,
     class_name: :Message

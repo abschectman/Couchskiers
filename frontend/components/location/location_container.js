@@ -12,7 +12,7 @@ const msp = (state, ownProps) => {
     location: state.entities.locations[ownProps.match.params.locationId],
     locationId: ownProps.match.params.locationId,
     users: state.entities.users,
-    requesters: state.entities.requesters
+    requesters: state.entities.reservations
   };
 };
 

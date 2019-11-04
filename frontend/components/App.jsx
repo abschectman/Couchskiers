@@ -3,7 +3,7 @@ import React from "react";
 import SignUpConainer from "./session/signup_container"
 import Login from "./modal/modal_container"
 import Dash from "./dash/dash_container"
-import ChatRoom from "../components/chat/ChatRoom"
+import ChatRoom from "../components/chat/reservation_container"
 import Edit from "./user/edit_user_container"
 import Location from "./location/location_container"
 import Ref from "./refer/ref_container"
@@ -16,7 +16,7 @@ const App = () => (
     <ProtectedRoute path="/refs/:userId" component={Ref} />
     <ProtectedRoute exact path="/users/:userId" component={Dash} />
     <Route path="/locations/:locationId" component={Location} />
-    <Route path="/messages" component={ChatRoom} />
+    <Route path="/messages/:reservationId" component={ChatRoom} />
   </div>
 );
 

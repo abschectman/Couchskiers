@@ -5,3 +5,10 @@ export const postRes = res => {
     data: { reservation: res }
   });
 };
+
+export const getRes = id => {
+  return $.ajax({
+    method: "GET",
+    url: `api/reservations/${id}`
+  });
+};

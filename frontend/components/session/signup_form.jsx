@@ -91,7 +91,6 @@ class SignupForm extends React.Component{
            <span className="share">Share Authentic Travel Experiences</span>
 
 
-
           <form onSubmit={this.handleSubmit} className="signup" >
            <h3>Sign Up With Email</h3>
              {cont}
@@ -100,13 +99,13 @@ class SignupForm extends React.Component{
 
              <div className="first-name">
                <label htmlFor="">First name</label>
-            <input type="text" />
+            <input type="text" placeholder="First name"/>
 
              </div>
 
             <div className="last-name">
                <label htmlFor="">Last name</label>
-            <input type="text" />
+               <input type="text" placeholder="Last name"/>
 
              </div>
 
@@ -114,18 +113,18 @@ class SignupForm extends React.Component{
 
            <div className="email">
            <label htmlFor="">Email</label>
-           <input type="email" value={this.state.email} onChange={this.update('email')} />
+             <input type="email" placeholder="Email" value={this.state.email} onChange={this.update('email')} />
            </div>
 
             <div className="password">
            <label htmlFor="">Password</label>
-           <input type="password" value={this.state.password} onChange={this.update('password')} />
+             <input type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')} />
            </div>
 
            <div className="password">
              <label htmlFor="">Location</label>
              <div className="loc-container">
-             <input type="text" value={this.state.location} onChange={this.handleLocation } />
+               <input type="text" placeholder="Location" value={this.state.location} onChange={this.handleLocation } />
              <ul className="drop-container">{displayString}</ul>
              </div>
            </div>
@@ -133,7 +132,6 @@ class SignupForm extends React.Component{
            <input className="bottom-join" type="submit" value="Join" />
 
          </form >
-
 
            <span>Already a member?</span>
            <button className="login-button" onClick={this.modaling}>Log In</button>

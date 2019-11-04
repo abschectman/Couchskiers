@@ -52,7 +52,7 @@ class Modal extends React.Component {
         <form onSubmit={this.handleSubmit} className="signin" >
           <button type="button" className="exit" onClick={this.closer}>X</button>
           <h3>Log in to Couchsurfing</h3>
-          <button type="button" className="demo" onClick={this.demoLogin}>Demo User</button>
+          
           {cont}
             <input placeholder="Email or Username" type="email" value={this.state.email} onChange={this.update('email')} />
 
@@ -60,7 +60,10 @@ class Modal extends React.Component {
 
           <input id="modal-login" type="submit" value="Log In" />
           <div id="modal-line"><span>or</span></div>
+          <input type="button" className="modal-demo" onClick={this.demoLogin} value="Demo User" />
 
+          <span id="modal-join-head">Don't have an account?</span>
+          <button id="modal-join" onClick={this.closer}>Join</button>
         </form >
 
         </section>

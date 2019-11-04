@@ -83,19 +83,55 @@
     height: 2px;
     width: 80%;
     z-index: 0;
+    margin-bottom: 20px;
 }
 
 #modal-line > span{
   font-size: 15px;
   height: 15px;
   z-index: 1;
+  position: absolute;
+  right: 47%;
   color: #6c797a;
   background: #fff;
     display: inline-block;
     padding: 0 10px;
     z-index: 1;
     font-size: 15px;
-    line-height: 0.7;
+   
+}
+
+.modal-demo{
+  background-color: #3b5998;
+  border: 1px solid #3b5998;
+  color: white;
+  cursor: pointer;
+}
+#modal-join-head{
+  color: #34495e;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+#modal-join{
+  width: 30%;
+  border: 1px solid #287FB8;
+  color: #287FB8;
+  margin: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    white-space: normal;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
 }
 
 .demo-login{
@@ -254,7 +290,11 @@ h3{
 }
 
 .exit{
-  margin-left: 320px;
+ margin-left: 94%;
+ border: none;
+ color: #afb6c2;
+ cursor: pointer;
+ font-size: 20px;
 }
 
 .login-button{

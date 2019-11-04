@@ -28,6 +28,75 @@
   border-radius: 4px;
 }
 
+.signin{
+  height: 70%;
+  width: 60%;
+  background-color: white;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signin > h3{
+      color: #34495E;
+}
+
+.signin >input{
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: none;
+  width: 80%;
+  font-size: 15px;
+  height: 40px;
+  padding: 5px;
+  margin: 10px;
+}
+
+#modal-login{
+    background-color: #287FB8;
+    border: 1px solid #287FB8;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    white-space: normal;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+#modal-line{
+    background: #f7f7f7;
+    height: 2px;
+    width: 80%;
+    z-index: 0;
+}
+
+#modal-line > span{
+  font-size: 15px;
+  height: 15px;
+  z-index: 1;
+  color: #6c797a;
+  background: #fff;
+    display: inline-block;
+    padding: 0 10px;
+    z-index: 1;
+    font-size: 15px;
+    line-height: 0.7;
+}
 
 .demo-login{
   background-color: white;
@@ -180,7 +249,7 @@ h3{
   width: 100%;
   height: 100%;
   color: white;
-  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), image-url('ski-photo.jpeg');
+  background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) ), image-url('ski-photo.jpeg');
   background-size: 100%;
 }
 

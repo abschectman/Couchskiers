@@ -9,5 +9,7 @@ class_name: :User
 belongs_to :subject,
 foreign_key: :subject_id,
 class_name: :User
+
+
   
 end

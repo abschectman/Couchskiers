@@ -49,22 +49,17 @@ class Modal extends React.Component {
     if (this.props.modal){
     return (
       <section className="auth-info-modal">
-        <form onSubmit={this.handleSubmit} className="signup" >
+        <form onSubmit={this.handleSubmit} className="signin" >
           <button type="button" className="exit" onClick={this.closer}>X</button>
-          <h3>Log In</h3>
+          <h3>Log in to Couchsurfing</h3>
           <button type="button" className="demo" onClick={this.demoLogin}>Demo User</button>
           {cont}
-          <div className="email">
-            <label htmlFor="">Email</label>
-            <input type="email" value={this.state.email} onChange={this.update('email')} />
-          </div>
+            <input placeholder="Email or Username" type="email" value={this.state.email} onChange={this.update('email')} />
 
-          <div className="password">
-            <label htmlFor="">Password</label>
-            <input type="password" value={this.state.password} onChange={this.update('password')} />
-          </div>
+            <input placeholder="Password" type="password" value={this.state.password} onChange={this.update('password')} />
 
-          <input className="bottom-join" type="submit" value="Log In" />
+          <input id="modal-login" type="submit" value="Log In" />
+          <div id="modal-line"><span>or</span></div>
 
         </form >
 

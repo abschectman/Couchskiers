@@ -1,5 +1,4 @@
 import React from "react";
-
 class Modal extends React.Component {
   constructor(props) {
     super(props);
@@ -67,7 +66,6 @@ class Modal extends React.Component {
         </form >
 
         </section>
-
 
     )}
      else return null;

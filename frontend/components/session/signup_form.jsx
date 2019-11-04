@@ -83,9 +83,10 @@ class SignupForm extends React.Component{
 
    return (
        <main>
+      
        <SignupNavContainer />
-
          <section className="auth-info">
+         
            <span className="local">Ski with Locals and Meet Travelers</span>
            <span className="share">Share Authentic Travel Experiences</span>
 

@@ -32,8 +32,8 @@ class SignupForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    let user = this.state
-    this.props.create(user).then(user => (this.props.history.push(`/users/${user.id}`)))
+    let users = this.state
+    this.props.create(users)
   }
 
   update(field) {

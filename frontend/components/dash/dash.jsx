@@ -1,5 +1,6 @@
 import React from "react"
 import NavContainer from "../navbar/nav_container"
+import MessageForm from "../chat/MessageForm"
 class Dash extends React.Component{
 constructor(props){
   super(props)
@@ -15,6 +16,7 @@ constructor(props){
     descriptionClass: "description-section",
     referenceClass: "reference-section-hidden"
   }
+  
   this.refCount = 0;
   this.img = "res-req-none"
   this.unFetched = true;
@@ -172,7 +174,6 @@ render (){
 
     <section className="show-middle">
       <div className="middle-top">
-        
         <div className="top-left">
           <span className="show-host">{this.props.users[this.props.userId].hosting_status}</span>
           <span className="login-time">Last login today</span>

@@ -1,12 +1,10 @@
 import React from "react";
-import MessageForm from "./messageform.jsx"
+import MessageForm from "./MessageForm.js";
 
-class Chat extends React.Component {
-  constructor(props){
+class ChatRoom extends React.Component {
+  constructor(props) {
     super(props);
-    this.state = {
-      messages: []
-    }
+    this.state = { messages: [] };
     this.bottom = React.createRef();
   }
 
@@ -19,16 +17,17 @@ class Chat extends React.Component {
             messages: this.state.messages.concat(data.message)
           });
         },
-        speak: function (data) {
+        speak: function(data) {
           return this.perform("speak", data);
         }
       }
     );
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.bottom.current.scrollIntoView();
   }
+
   render() {
     const messageList = this.state.messages.map(message => {
       return (
@@ -39,8 +38,8 @@ class Chat extends React.Component {
       );
     });
     return (
-      <div className="chat-container">
-        <div>Chat</div>
+      <div className="chatroom-container">
+        <div>ChatRoom</div>
         <div className="message-list">{messageList}</div>
         <MessageForm />
       </div>
@@ -48,4 +47,4 @@ class Chat extends React.Component {
   }
 }
 
-export default Chat;
+export default ChatRoom;

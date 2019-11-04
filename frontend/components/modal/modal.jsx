@@ -16,7 +16,7 @@ class Modal extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let user = this.state
-    this.props.login(user).then(user => (this.props.history.push(`/users/${user.id}`)))
+    this.props.login(user)
   }
 
   demoLogin(e) {
@@ -25,7 +25,7 @@ class Modal extends React.Component {
       email: "demo@test.com",
       password: "password"
     }
-    this.props.login(demoUser).then(user => (this.props.history.push(`/users/${user.id}`)))
+    this.props.login(demoUser)
   }
 
   closer(e) {

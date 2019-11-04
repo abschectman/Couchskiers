@@ -1,4 +1,3 @@
-
 import React from "react";
 
 class MessageForm extends React.Component {
@@ -8,13 +7,15 @@ class MessageForm extends React.Component {
   }
 
   update(field) {
-    return e =>
-      this.setState({ [field]: e.currentTarget.value });
+    return e => this.setState({ [field]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    App.cable.subscriptions.subscriptions[0].speak({ message: this.state.body });
+    debugger
+    App.cable.subscriptions.subscriptions[0].speak({
+      message: this.state.body
+    });
     this.setState({ body: "" });
   }
 

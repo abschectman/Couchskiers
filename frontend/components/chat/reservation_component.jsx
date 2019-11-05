@@ -1,4 +1,5 @@
 import React from 'react'
+import MessageForm from "./MessageForm"
 
 class Reservation extends React.Component{
   constructor(props){
@@ -26,8 +27,18 @@ class Reservation extends React.Component{
   }
 
   render(){
+    const messageList = this.state.messages.map(message => {
+      return (
+        <li key={message.id}>
+          {message}
+          <div />
+        </li>
+      );
+    });
     return (
     <div>
+      <MessageForm />
+      {messageList}
     </div>
     )}
 }

@@ -6,7 +6,7 @@ const msp = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     reservationId: ownProps.match.params.reservationId,
-    messages: state.entitites.messages
+    messages: state.entities.messages
   };
 };
 

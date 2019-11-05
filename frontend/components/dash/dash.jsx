@@ -1,6 +1,7 @@
 import React from "react"
 import NavContainer from "../navbar/nav_container"
-import MessageForm from "../chat/MessageForm"
+import ReservationComponent from "../chat/reservation_container"
+
 class Dash extends React.Component{
 constructor(props){
   super(props)
@@ -214,14 +215,22 @@ render (){
 
       <div className="middle-middle">
         <div className="middle-tool">
+
           <div className="abt-div">
             <span onClick={this.toggleShow}>About</span>
           </div>
+
+          <div className="res-div">
+            <span onClick={this.toggleShow}>Upcoming Trips</span>
+          </div>
+
           <div className="ref-div">
             <span onClick={this.toggleShow}>References</span>
             <p className="badge">{this.refCount}</p>
           </div>
+
         </div>
+
         <div className={this.state.referenceClass}>
             <div className="refrences">{this.handleReferences()}</div>
         </div>

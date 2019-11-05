@@ -831,7 +831,7 @@ flex-direction: column;
         background-color: white;
         height: 500px;
         width: 500px;
-        padding: 20px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: left;
@@ -848,7 +848,9 @@ flex-direction: column;
   #row-one{
     display: flex;
     border-bottom: 1px solid #ecf0f1;
+    align-items: center;
     position: relative;
+    height: 50px;
     justify-content: right;
   }
 
@@ -880,10 +882,10 @@ flex-direction: column;
   }
 
   .edit-button-page{
-  background-color: #287FB8;
-    border: 1px solid #287FB8;
+    background-color: #41b866;
+    border: 1px solid #41b866;
+    color: #fff;;
     border-radius: 3px;
-    color: #fff;
     cursor: pointer;
     display: inline-block;
     font-size: 15px;
@@ -891,7 +893,6 @@ flex-direction: column;
     line-height: 1.5;
     max-width: 240px;
     min-width: 6em;
-    padding: 8px 12px;
     text-align: center;
     text-decoration: none;
     -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -901,6 +902,7 @@ flex-direction: column;
     -webkit-appearance: none;
     -webkit-font-smoothing: antialiased;
     margin-right: 20px;
+    margin-bottom: 5px;
 }
 
 #buttons{

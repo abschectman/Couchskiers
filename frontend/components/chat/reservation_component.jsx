@@ -10,7 +10,13 @@ class Reservation extends React.Component{
   }
 
   componentDidMount(){
-    this.props.getMessages(parseInt(this.props.reservationId))
+    this.props.getMessages(parseInt(this.props.reservationId)).then(
+      res => {
+        res.res[this.props.reservationId].messages.forEach(mes => {
+          this.state.messages.push(res.messages[mes].body)
+        });
+      }
+    )
     App.cable.subscriptions.create(
       { channel: "ChatChannel", reservation_id: this.props.reservationId},
       {

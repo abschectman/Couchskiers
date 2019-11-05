@@ -5,7 +5,7 @@ import ReservationComponent from "./reservation_component"
 const msp = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    reservationId: ownProps.match.params.reservationId,
+    // reservationId: ownProps.match.params.reservationId,
     messages: state.entities.messages
   };
 };

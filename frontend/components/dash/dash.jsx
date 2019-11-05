@@ -1,6 +1,7 @@
 import React from "react"
 import NavContainer from "../navbar/nav_container"
 import ReservationComponent from "../chat/reservation_container"
+import Reference from "../reference/reference"
 
 class Dash extends React.Component{
 constructor(props){
@@ -67,29 +68,22 @@ componentDidUpdate(){
    
   }
 
-
   handleReferences(){
-    if (this.props.users[this.props.userId].references){
-    return (this.props.users[this.props.userId].references
+    let list = []
+    if (this.props.users[this.props.userId].references){ 
+      list = this.props.users[this.props.userId].references
       .map(ref => {
-        let message;
-        
-        if (this.props.referers[this.props.references[ref].referer_id]){
-          let e = this.props.users[this.props.userId].email.indexOf("@")
-          this.props.references[ref].positive ? message = `Would Stay With ${this.props.users[this.props.userId].email.slice(0, e)} Again`
-            : message = `Would Not Stay With ${this.props.users[this.props.userId].email.slice(0,e)} Again`
-      return (<div className="ref-list">
-        <img id="host-img" />
-        <div className="ref-list-info">
-        <span id="ref-email">{this.props.referers[this.props.references[ref].referer_id].email}</span>
-        <span id="ref-loc">{this.props.locations[this.props.referers[this.props.references[ref].referer_id].location_id].city
-            + ", " + this.props.locations[this.props.referers[this.props.references[ref].referer_id].location_id].country}</span>
-          <span id="ref-member">Member since 2019</span>
-          <span id={message.split(" ")[1]}>{message}</span>
-          <span id="ref-body"> {this.props.references[ref].body} </span>
-        </div>
-    </div>)}}))
+        let customProps = {
+          rating: this.props.references[ref].positive,
+          sendersEmail: this.props.users[this.props.userId].email,
+          receiversEmail: this.props.referers[this.props.references[ref].referer_id].email,
+          location: this.props.locations[this.props.referers[this.props.references[ref].referer_id].location_id],
+          body: this.props.references[ref].body
+        }
+        return <Reference props={customProps} />
+      })
     }
+    return list
   }
 
   handleEdit(e) {
@@ -161,7 +155,7 @@ render (){
         <NavContainer />
 
     <section className="show-body">
-
+      {/* <ReservationComponent reservationId={2} /> */}
     <section className="show-left">
       <div id="user-img"><img id={this.img} alt=""/></div>
       <span>{this.props.users[this.props.userId].email}</span>

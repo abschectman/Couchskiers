@@ -5,8 +5,10 @@ class ChatChannel < ApplicationCable::Channel
 
   def speak(data)
     channel = Channel.find_by(reservation_id: params["reservation_id"])
-    message = Message.create(body: data['message'], channel_id: channel.id)
-    socket = {message: message.body}
+    message = Message.create(body: data['message'], channel_id: channel.id, reservation_id: params["reservation_id"])
+    socket = {message: message.body,
+    reservation_id: message.reservation_id
+  }
     ChatChannel.broadcast_to('chat_channel', socket)
   end
   def unsubscribed

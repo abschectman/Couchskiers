@@ -743,6 +743,20 @@ flex-direction: column;
   padding: 5px;
 }
 
+.res-div > span{
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px;
+}
+.res-div{
+  color: #287FB8
+}
+
+.res-div:hover{
+  color:  #ED6504;
+}
+
 .ref-div{
   color: #287FB8
 }

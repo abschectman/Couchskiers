@@ -26,6 +26,10 @@ class User < ApplicationRecord
   through: :references,
   source: :writer
 
+  has_many :reservations,
+  foreign_key: :reserver_id,
+  class_name: :Reservation
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

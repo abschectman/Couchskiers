@@ -16,6 +16,7 @@ constructor(props){
     reservation_message: "",
     reqStatus: "res-req-none",
     descriptionClass: "description-section",
+    tripsClass: "trips-section-hidden",
     referenceClass: "reference-section-hidden"
   }
   
@@ -30,6 +31,7 @@ constructor(props){
   this.toggleShow = this.toggleShow.bind(this);
   this.createRef = this.createRef.bind(this)
   this.handleReferences = this.handleReferences.bind(this);
+  this.handleReservations= this.handleReservations.bind(this);
 }
 
 componentDidMount(){
@@ -56,16 +58,25 @@ componentDidUpdate(){
 
   toggleShow(e){
     e.preventDefault();
-    e.currentTarget.innerText === "References" ? 
-    this.setState({
-    descriptionClass: "description-section-hidden",
-    referenceClass: "reference-section" 
-   }) 
-    : this.setState({ 
-      descriptionClass: "description-section",
-      referenceClass: "reference-section-hidden"
-     });
-   
+    if(e.currentTarget.innerText === "References"){
+      this.setState({
+        descriptionClass: "description-section-hidden",
+        tripsClass: "trips-section-hidden",
+        referenceClass: "reference-section"
+      })
+    } else if (e.currentTarget.innerText === "About"){
+      this.setState({
+        descriptionClass: "description-section",
+        tripsClass: "trips-section-hidden",
+        referenceClass: "reference-section-hidden"
+      })
+    } else {
+      this.setState({
+        descriptionClass: "description-section-hidden",
+        tripsClass: "trips-section",
+        referenceClass: "reference-section-hidden"
+      })
+    }
   }
 
   handleReferences(){
@@ -85,7 +96,13 @@ componentDidUpdate(){
     }
     return list
   }
-
+  handleReservations(){
+    if (this.props.users[this.props.userId].reservations){
+     return this.props.users[this.props.userId].reservations.map(resId => {
+        return <ReservationComponent reservationId={resId} />
+      })
+    }
+  }
   handleEdit(e) {
     e.preventDefault();
     this.props.history.push(`/banana/${this.props.currentUser}`)
@@ -228,6 +245,11 @@ render (){
         <div className={this.state.referenceClass}>
             <div className="refrences">{this.handleReferences()}</div>
         </div>
+
+        <div className={this.state.tripsClass}>
+            <div>{this.handleReservations()}</div>
+        </div>
+
         <div className={this.state.descriptionClass}>
               <span>{this.props.users[this.props.userId].description}</span>
         </div>

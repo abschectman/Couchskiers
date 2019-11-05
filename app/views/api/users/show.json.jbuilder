@@ -14,6 +14,10 @@ json.location do
     json.array! @user.reference_ids
     end
 
+    json.reservations do
+      json.array! @user.reservation_ids
+    end
+
     json.reference_list do
       @user.references.each do |ref|
         json.set! ref.id do

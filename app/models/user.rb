@@ -30,6 +30,10 @@ class User < ApplicationRecord
   foreign_key: :reserver_id,
   class_name: :Reservation
 
+  has_many :pending_reservations,
+  foreign_key: :host_id,
+  class_name: :Reservation
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

@@ -5,13 +5,18 @@ class Reservation extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      messages: []
+      messages: [],
+      host: "",
+      traveler: ""
     }
+  
   }
 
   componentDidMount(){
     this.props.getMessages(parseInt(this.props.reservationId)).then(
       res => {
+        debugger
+        // this.setState({host: res.res[this.props.reservationId.host_id]})
         res.res[this.props.reservationId].messages.forEach(mes => {
           this.state.messages.push(res.messages[mes].body)
         });

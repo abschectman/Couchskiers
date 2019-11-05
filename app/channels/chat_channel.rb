@@ -4,8 +4,8 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    channel = Channel.find_by(reservation_id: params["reservation_id"])
-    message = Message.create(body: data['message'], channel_id: channel.id, reservation_id: params["reservation_id"])
+    # channel = Channel.find_by(reservation_id: params["reservation_id"]["id"])
+    message = Message.create(body: data['message'], reservation_id: params["reservation_id"]["id"])
     socket = {message: message.body,
     reservation_id: message.reservation_id
   }

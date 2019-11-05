@@ -97,9 +97,10 @@ componentDidUpdate(){
     return list
   }
   handleReservations(){
-    if (this.props.users[this.props.userId].reservations){
-     return this.props.users[this.props.userId].reservations.map(resId => {
-        return <ReservationComponent reservationId={resId} />
+    if (this.props.users[this.props.userId].host_reservations){
+      let trips = this.props.users[this.props.userId].trip_reservations.concat(this.props.users[this.props.userId].host_reservations)
+     return trips.map(resId => {
+        return <ReservationComponent reservationId={resId} user={this.props.users[this.props.userId]} />
       })
     }
   }

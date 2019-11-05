@@ -14,8 +14,12 @@ json.location do
     json.array! @user.reference_ids
     end
 
-    json.reservations do
+    json.host_reservations do
       json.array! @user.reservation_ids
+    end
+
+    json.trip_reservations do
+      json.array! @user.pending_reservations
     end
 
     json.reference_list do

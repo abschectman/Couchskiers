@@ -45,24 +45,27 @@ class Reservation extends React.Component{
   render(){
     const messageList = this.state.messages.map(message => {
       let type
-      message.user === this.props.user.id ? type ="me" : type = "you"
+      message.user === this.props.user.id ? type ="mine" : type = "yours"
      return (
-        <li id={type}>
+       <div className={type + " messages"}>
+        <div className="message last">
           {message.body}
-        </li>
+        </div>
+       </div>
       );
     });
     return (
     <div id={this.props.reservationId} className="res-chat">
       <span>Your conversation with {this.state.host}</span>
       
-        <ul id="mes-list">
+        <div className="chat">
           {messageList}
-        </ul>
+        </div>
         <MessageForm />
-      <span>bottom</span>
+    
     </div>
     )}
 }
+
 
 export default Reservation;

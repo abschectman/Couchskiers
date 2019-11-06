@@ -1369,10 +1369,8 @@ margin-left: 25px;
  }
 
  .res-chat > span{
-   margin: 0 auto;
-   width: 100%;
-   border-bottom: #6c797a solid 1px;
-   font-size: 15px;
+   margin-left: 20%;
+   font-size: 20px;
  }
 
  
@@ -1675,4 +1673,30 @@ writing-mode:horizontal-tb;
   height: 20px;
   background: white;
   border-bottom-left-radius: 10px;
+}
+
+
+#message-form > form{
+ display: flex;
+ height: 30px;
+   margin: 5px;
+   border: #34495e solid 0.5px;
+   border-radius: 4px;
+}
+
+
+#message-text{
+  font-size: 13px;
+  width: 90%;
+  border: none;
+  height: 27px;
+
+}
+
+#message-submit{
+  font-size: 13px;
+  width: 8%;
+  border: none;
+  height: 27px;
+
 }

@@ -10,7 +10,7 @@ end
 json.messages do
   @reservation.messages.each do |message|
     json.set! message.id do
-      json.extract! message, :id, :body, :reservation_id
+      json.extract! message, :id, :body, :reservation_id, :user_id
     end
   end
 end

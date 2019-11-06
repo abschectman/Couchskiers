@@ -23,7 +23,6 @@ class Reservation extends React.Component{
       })
         res.res[this.props.reservationId].messages.forEach(mes => {
           if(res.messages[mes].reservation_id === this.props.reservationId){
-            debugger
             this.state.messages.push({ body: res.messages[mes].body, user: res.messages[mes].user_id})
         }});
       }
@@ -33,7 +32,7 @@ class Reservation extends React.Component{
       {
         received: data => {
           this.setState({
-            messages: this.state.messages.concat(data.message)
+            messages: this.state.messages.concat([{body: data.message, user: data.user_id}])
           });
         },
         speak: function (data) {
@@ -45,10 +44,11 @@ class Reservation extends React.Component{
 
   render(){
     const messageList = this.state.messages.map(message => {
+      let type
+      message.user === this.props.user.id ? type ="me" : type = "you"
      return (
-        <li>
+        <li id={type}>
           {message.body}
-          {message.user}
         </li>
       );
     });

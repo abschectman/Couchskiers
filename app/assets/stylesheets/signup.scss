@@ -1322,6 +1322,30 @@ margin-left: 25px;
     border-bottom: 1.5px solid rgba(0,0,0,0.15);
  }
 
+ #mes-list{
+   display: flex;
+   flex-direction: column;
+ }
+
+ #me{
+   background-color: #287FB8;
+ }
+
+#you{
+  background-color: #41b866;
+}
+
+ #mes-list > li{
+   list-style: none;
+   padding-left: 10px;
+   padding-right: 10px;
+   width: fit-content;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   border: inherit 1px solid;
+   border-radius: 25%;
+ }
+
  .reference-section{
    height: 400px;
    margin-top: 20px;

@@ -100,7 +100,7 @@ componentDidUpdate(){
     if (this.props.users[this.props.userId].host_reservations){
       let trips = this.props.users[this.props.userId].trip_reservations.concat(this.props.users[this.props.userId].host_reservations)
      return trips.map(resId => {
-        return <ReservationComponent reservationId={resId} user={this.props.users[this.props.userId]} />
+        return <ReservationComponent reservationId={resId} user={this.props.users[this.props.userId]}/>
       })
     }
   }

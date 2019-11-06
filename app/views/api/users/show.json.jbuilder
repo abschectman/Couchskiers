@@ -19,7 +19,7 @@ json.location do
     end
 
     json.trip_reservations do
-      json.array! @user.pending_reservations
+      json.array! @user.pending_reservation_ids
     end
 
     json.reference_list do

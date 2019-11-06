@@ -30,8 +30,8 @@ const editUser = (user) => {
 
 
 export const getUser = (id) => (dispatch) => {
-  userShow(id).then(user => {
-    dispatch(showUser(user))
+  return userShow(id).then(user => {
+    return dispatch(showUser(user))
   })
 }
 

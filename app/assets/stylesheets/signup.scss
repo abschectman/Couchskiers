@@ -1313,6 +1313,15 @@ margin-left: 25px;
    display: none;
  }
 
+ .trips-section{
+      height: 400px;
+   margin-top: 20px;
+   overflow: hidden;
+   overflow-y: scroll;
+    background-color: white;
+    border-bottom: 1.5px solid rgba(0,0,0,0.15);
+ }
+
  .reference-section{
    height: 400px;
    margin-top: 20px;
@@ -1329,6 +1338,13 @@ margin-left: 25px;
   border-bottom-width:1px;
  }
 
+ .res-chat{
+      border-bottom-color:rgb(230, 230, 230);
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+ }
+
+ 
  .ref-list-info{
     display: flex;
     flex-direction: column;

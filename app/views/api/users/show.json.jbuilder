@@ -1,18 +1,6 @@
+json.user do
 json.partial! 'user', user: @user
 
-json.location do
-    json.set! @user.location.id do
-      json.extract! @user.location, :id, :city, :country
-    end
-  end
-
-    if @user.photo.attached?
-    json.photo image_tag(@user.photo)
-    end
-
-  json.references do
-    json.array! @user.reference_ids
-    end
 
     json.host_reservations do
       json.array! @user.reservation_ids
@@ -21,6 +9,28 @@ json.location do
     json.trip_reservations do
       json.array! @user.pending_reservation_ids
     end
+
+    json.referer_ids do
+      json.array! @ref_ids
+    end
+
+    if @user.photo.attached?
+      json.photo image_tag(@user.photo)
+   end
+
+    json.references do
+    json.array! @user.reference_ids
+    end
+
+  end
+
+ 
+
+json.location do
+    json.set! @user.location.id do
+      json.extract! @user.location, :id, :city, :country
+    end
+  end
 
     json.reference_list do
       @user.references.each do |ref|

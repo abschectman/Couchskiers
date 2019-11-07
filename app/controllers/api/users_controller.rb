@@ -26,10 +26,10 @@ class Api::UsersController < ApplicationController
 
   end
 
-  def index
-    @users = User.all
-    render json: @users
-  end
+  # def index
+  #   @users = User.all
+  #   render json: @users
+  # end
 
   def destroy
     @user = User.find(params[:id])
@@ -39,6 +39,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @ref_ids = @user.referers.map{|ref| ref.id}
     render :show
   end
 

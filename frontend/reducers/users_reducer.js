@@ -38,7 +38,7 @@ const usersReducer = (state = {}, action) => {
     case SHOW_USER:{
       let newState = state;
       let id = action.user.id;
-     return Object.assign({}, newState, { [id]: action.user})
+     return Object.assign({}, newState, { [id]: action.user}, action.referers)
     }
     default:
       return state;

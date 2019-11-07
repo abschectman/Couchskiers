@@ -7,7 +7,7 @@ export const GET_USERS = "GET_USERS"
 const showUser = (user) => {
   return {
     type: SHOW_USER,
-    user: user,
+    user: user.user,
     location: user.location,
     references: user.reference_list,
     referers: user.referers

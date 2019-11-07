@@ -51,7 +51,7 @@ export const login = (user) => (dispatch) => {
   return signIn(user).then(
     
     user => {
-      dispatch(receiveCurrentUser(user));
+      return dispatch(receiveCurrentUser(user));
     },
     error => dispatch(receiveErrors(error))
   );

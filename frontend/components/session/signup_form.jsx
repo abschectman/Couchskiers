@@ -26,7 +26,9 @@ class SignupForm extends React.Component{
       email: "demo@test.com",
       password: "password"
     }
-    this.props.login(demoUser)
+    this.props.login(demoUser).then(user => {
+      console.log(user)
+    })
     
   }
 

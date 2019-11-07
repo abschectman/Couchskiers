@@ -37,7 +37,7 @@ export const getUser = (id) => (dispatch) => {
 
 export const changeUser = (user, id) => (dispatch) => {
   return patchUser(user, id).then(user => {
-    dispatch(showUser(user))
+    return dispatch(showUser(user))
   })
 }
 

@@ -9,14 +9,14 @@ import Root from "./components/root"
 document.addEventListener("DOMContentLoaded", ()=>{
   let store;
   if (window.currentUser) {
-    const { currentUser } = window;
-    const { id } = currentUser;
+    const { currentUser } = window.currentUser.user;
+    const { id } = window.currentUser.user;
     const preloadedState = {
-      entities: {
-        users: {
-          [id]: currentUser
-        }
-      },
+      // entities: {
+      //   users: {
+      //     [id]: currentUser
+      //   }
+      // },
       session: { currentUser: id }
     };
     store = configureStore(preloadedState);

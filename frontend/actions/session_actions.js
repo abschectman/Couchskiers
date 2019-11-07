@@ -8,10 +8,13 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
 
 const receiveCurrentUser = (user) => {
-  return ({
+  return {
     type: RECEIVE_CURRENT_USER,
-    user
-  })
+    user: user.user,
+    location: user.location,
+    references: user.reference_list,
+    referers: user.referers
+  };
 }
 const logoutCurrentUser = () => {
   return {

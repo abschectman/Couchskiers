@@ -39,7 +39,6 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @ref_ids = @user.referers.map{|ref| ref.id}
     render :show
   end
 

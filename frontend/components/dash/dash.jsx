@@ -87,8 +87,8 @@ componentDidUpdate(){
         let customProps = {
           rating: this.props.references[ref].positive,
           sendersEmail: this.props.users[this.props.userId].email,
-          receiversEmail: this.props.referers[this.props.references[ref].referer_id].email,
-          location: this.props.locations[this.props.referers[this.props.references[ref].referer_id].location_id],
+          receiversEmail: this.props.users[this.props.references[ref].referer_id].email,
+          location: this.props.locations[this.props.users[this.props.references[ref].referer_id].location_id],
           body: this.props.references[ref].body
         }
         return <Reference props={customProps} />

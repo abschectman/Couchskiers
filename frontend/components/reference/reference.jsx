@@ -20,7 +20,7 @@ class Reference extends React.Component {
       <div className="ref-list">
         <img id="host-img" />
         <div className="ref-list-info">
-          <span id="ref-email">{this.props.props.sendersEmail}</span>
+          <span id="ref-email">{this.props.props.receiversEmail}</span>
           <span id="ref-loc">{this.props.props.location.city
             + ", " + this.props.props.location.country}</span>
           <span id="ref-member">Member since 2019</span>

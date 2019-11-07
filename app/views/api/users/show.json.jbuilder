@@ -10,10 +10,6 @@ json.partial! 'user', user: @user
       json.array! @user.pending_reservation_ids
     end
 
-    json.referer_ids do
-      json.array! @ref_ids
-    end
-
     if @user.photo.attached?
       json.photo image_tag(@user.photo)
    end

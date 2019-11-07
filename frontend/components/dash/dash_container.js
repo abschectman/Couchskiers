@@ -12,8 +12,7 @@ const msp = (state, ownProps) => {
     locations: state.entities.locations,
     userId: ownProps.match.params.userId,
     users: state.entities.users,
-    references: state.entities.references,
-    referers: state.entities.referers
+    references: state.entities.references
   }; 
   if (state.entities.users[ownProps.match.params.userId]){
     ob["test"] = state.entities.users[ownProps.match.params.userId].location_id;

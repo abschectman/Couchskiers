@@ -1,3 +1,7 @@
+body{
+  margin: 0px;
+}
+
 .auth-info{
 
   display: flex;
@@ -79,6 +83,9 @@
     background: #f7f7f7;
     height: 2px;
     width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 0;
     margin-bottom: 20px;
 }
@@ -87,13 +94,10 @@
   font-size: 15px;
   height: 15px;
   z-index: 1;
-  position: absolute;
-  right: 47%;
   color: #6c797a;
   background: #fff;
     display: inline-block;
     padding: 0 10px;
-    z-index: 1;
     font-size: 15px;
    
 }
@@ -696,9 +700,9 @@ flex-direction: column;
    #user-img > img{
      height: 180px;
      border-radius: 50%;
-    // width: 180px;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 180px;
+    // padding-left: 50px;
+    // padding-right: 50px;
    }
 
    #user-img-def{

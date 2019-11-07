@@ -15,3 +15,4 @@ csv.each do |row|
   l.country = row["country"]
   l.save
 end
+

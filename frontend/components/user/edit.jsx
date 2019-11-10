@@ -6,10 +6,10 @@ class Edit extends React.Component {
     this.state = {
       id: this.props.currentUser,
       photo: "",
-      email: this.props.users[this.props.currentUser].email,
-      description: this.props.users[this.props.currentUser].description,
-      hosting_status: this.props.users[this.props.currentUser].hosting_status,
-      profile: this.props.users[this.props.currentUser].photo,
+      email: "",
+      description: "",
+      hosting_status: "",
+      profile: "",
       img: "left-img"
     }
     this.updateNeed = true;
@@ -21,7 +21,14 @@ class Edit extends React.Component {
     this.cancel = this.cancel.bind(this)
   }
   componentDidMount(){
-    this.props.getUser(parseInt(this.props.currentUser))
+    this.props.getUser(parseInt(this.props.currentUser)).then(use =>{
+      this.setState({
+        email: use.user.email,
+        description: use.user.description,
+        hosting_status: use.user.hosting_status,
+        profile: use.user.photo
+      })
+    })
     if(this.state.profile){
       let h = document.getElementById("user-img")
       h.innerHTML = this.state.profile

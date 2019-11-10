@@ -13,7 +13,6 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     if session[:session_token] == @user.session_token && @user.update(user_params)
       file = params[:user][:photo]
-      
       if file !=  ""
         real_file = File.open(file.tempfile)
         @user.photo.attach(io: real_file, filename: @user.email)

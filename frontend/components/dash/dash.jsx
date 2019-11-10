@@ -39,12 +39,11 @@ componentDidMount(){
   if (parseInt(this.props.userId) === this.props.currentUser){
     this.setState({ reqStatus: "res-req-none"})
   }
-  if (document.getElementById("user-img")) {
     let h = document.getElementById("user-img")
     this.props.profile === undefined
       ? this.img = "user-img-def"
       : h.innerHTML = this.props.profile
-  }
+  
 }
 
 componentDidUpdate(){
@@ -99,6 +98,7 @@ componentDidUpdate(){
   handleReservations(){
     if (this.props.users[this.props.userId].host_reservations && parseInt(this.props.userId) === this.props.currentUser){
       let trips = this.props.users[this.props.userId].trip_reservations.concat(this.props.users[this.props.userId].host_reservations)
+      if(trips.length === 0){ return <h2>No upcoming trips</h2>}
      return trips.map(resId => {
         return <ReservationComponent reservationId={resId} user={this.props.users[this.props.userId]}/>
       })

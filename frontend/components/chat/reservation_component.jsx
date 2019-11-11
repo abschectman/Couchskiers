@@ -16,7 +16,7 @@ class Reservation extends React.Component{
   }
 
   componentDidMount(){
-  
+    if(this.channel){this.channel.unsubscribe()}
     let id =this.props.reservationId;
     let otherUser;
     this.props.getMessages(parseInt(this.props.reservationId)).then(

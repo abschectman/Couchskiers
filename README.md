@@ -7,8 +7,9 @@ Avid skiers can use it to find local hosts, to host people or just to meet up.  
 ## Features
 1. Single page web-app that avoids refresh or slowdown
 2. Allows real-time location search for thousands of cities worldwide
-3. Contains Live user communication in the form of booking requests and responses
+3. Contains Live user communication in the form of booking requests and responses as well as a live chat
 4. Has styled page views and easy site navigation for an enjoyable user experience
+5. Implements AWS S3 storage to retain User information and profile pictures
 
 ## A Quick Glimpse
 User Show Page

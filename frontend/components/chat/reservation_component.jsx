@@ -7,17 +7,21 @@ class Reservation extends React.Component{
     this.state = {
       messages: [],
       host: "",
-      traveler: ""
+      traveler: "",
+      user: ""
     }
+    this.channel = null;
+    this.bottom = React.createRef();
   
   }
 
   componentDidMount(){
+  
     let id =this.props.reservationId;
     let otherUser;
     this.props.getMessages(parseInt(this.props.reservationId)).then(
       res => {
-        this.props.user.id === res.res[id].host_id ? otherUser = res.res[id].reserver_id : otherUser = res.res[id].host_id
+        this.props.user === res.res[id].host_id ? otherUser = res.res[id].reserver_id : otherUser = res.res[id].host_id
       this.props.getUser(otherUser).then(use =>{
        this.setState({host: use.user.email})
       })
@@ -27,8 +31,8 @@ class Reservation extends React.Component{
         }});
       }
     )
-    App.cable.subscriptions.create(
-      { channel: "ChatChannel", reservation_id: this.props.reservationId, user_id: this.props.user.id},
+    this.channel = App.cable.subscriptions.create(
+      { channel: "ChatChannel", reservation_id: this.props.reservationId, user_id: this.props.user},
       {
         received: data => {
           this.setState({
@@ -42,10 +46,20 @@ class Reservation extends React.Component{
     );
   }
 
+  componentWillUnmount(){
+   this.channel.unsubscribe();
+  }
+
+
+  componentDidUpdate() {
+    this.bottom.current.scrollIntoView();
+  }
+
   render(){
+    console.log(this.props.user)
     const messageList = this.state.messages.map(message => {
       let type
-      message.user === this.props.user.id ? type ="mine" : type = "yours"
+      message.user === this.props.user ? type ="mine" : type = "yours"
      return (
        <div className={type + " messages"}>
         <div className="message last">
@@ -60,6 +74,7 @@ class Reservation extends React.Component{
       
         <div className="chat">
           {messageList}
+        <span ref={this.bottom}></span>
         </div>
         <MessageForm />
     

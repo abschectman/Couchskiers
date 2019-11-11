@@ -11,6 +11,7 @@ constructor(props){
     myLocation: this.props.location,
     targetUser: {},
     start_date: "",
+    user: "",
     end_date: "",
     booked: false,
     reservation_message: "",
@@ -35,7 +36,9 @@ constructor(props){
 }
 
 componentDidMount(){
-  this.props.getUser(parseInt(this.props.userId))
+  this.props.getUser(parseInt(this.props.userId)).then(use =>{
+    this.setState({user: use.user.id})
+  })
   if (parseInt(this.props.userId) === this.props.currentUser){
     this.setState({ reqStatus: "res-req-none"})
   }
@@ -96,11 +99,12 @@ componentDidUpdate(){
     return list
   }
   handleReservations(){
-    if (this.props.users[this.props.userId].host_reservations && parseInt(this.props.userId) === this.props.currentUser){
+    if (this.props.users[this.props.userId].host_reservations && parseInt(this.state.user) === this.props.currentUser){
       let trips = this.props.users[this.props.userId].trip_reservations.concat(this.props.users[this.props.userId].host_reservations)
       if(trips.length === 0){ return <h2>No upcoming trips</h2>}
      return trips.map(resId => {
-        return <ReservationComponent reservationId={resId} user={this.props.users[this.props.userId]}/>
+       console.log(this.props.currentUser)
+        return <ReservationComponent reservationId={resId} user={this.props.currentUser}/>
       })
     } else {
       return <h2>Log in to see your trips</h2>

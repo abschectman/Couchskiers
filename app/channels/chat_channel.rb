@@ -4,6 +4,8 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
+    # user = User.find_by(session_token: session[:session_token]
+    # debugger
     # channel = Channel.find_by(reservation_id: params["reservation_id"]["id"])
     message = Message.create!(body: data['message'], reservation_id: params["reservation_id"], user_id: params["user_id"])
     socket = {message: message.body,
@@ -12,7 +14,7 @@ class ChatChannel < ApplicationCable::Channel
   }
     ChatChannel.broadcast_to('chat_channel', socket)
   end
-  def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
+  def unsubscribed()
+      # ActionCable.server.remote_connections.where(user_id: params["user-id"]).disconnect
   end
 end

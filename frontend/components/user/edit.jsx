@@ -30,21 +30,22 @@ class Edit extends React.Component {
       })
     })
     if(this.state.profile){
-      let h = document.getElementById("user-img")
+      let h = document.getElementById("edit-user-img")
       h.innerHTML = this.state.profile
       this.setState({img: "nope"})
       this.profileMessage = "Change Profile Picture:"
     }
   }
 
-  // componentDidUpdate(){
-  //   if (this.state.profile && this.updateNeed) {
-  //     let h = document.getElementById("user-img")
-  //     h.innerHTML = this.state.profile
-  //     this.setState({ img: "nope" })
-  //     this.updateNeed = false
-  //   }
-  // }
+  componentDidUpdate(){
+    if (this.state.profile && this.updateNeed) {
+      let h = document.getElementById("edit-user-img")
+      h.innerHTML = this.state.profile
+      this.setState({ img: "nope" })
+      this.updateNeed = false
+      this.profileMessage = "Change Profile Picture:"
+    }
+  }
 
   handlePhoto(e){
     let file = e.currentTarget.files[0];
@@ -98,7 +99,7 @@ class Edit extends React.Component {
 
         <section id="edit-outer">
       <section className="edit-left">
-        <div id="user-img"></div>
+        <div id="edit-user-img"></div>
         <img className={this.state.img} src="" alt=""/>
         <div id="overview">
           <span>OVERVIEW</span>

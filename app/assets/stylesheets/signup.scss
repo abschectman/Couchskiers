@@ -1767,3 +1767,8 @@ writing-mode:horizontal-tb;
 .travel-image-three{
   background-image: image-url("water.jpg")
 }
+
+#edit-user-img>img{
+  width: 100%;
+    border-bottom: solid 10px rgba(39,55,76,0.6);
+}

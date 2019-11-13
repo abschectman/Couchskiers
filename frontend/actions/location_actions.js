@@ -22,7 +22,7 @@ const receiveLocations = locations => {
 export const findLocation = id => dispatch => {
   return getLocation(id).then(
     location => {
-      dispatch(receiveCurrentLocation(location));
+     return  dispatch(receiveCurrentLocation(location));
     }
   );
 };

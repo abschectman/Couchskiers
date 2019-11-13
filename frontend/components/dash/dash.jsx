@@ -51,6 +51,10 @@ componentDidMount(){
 }
 
 componentDidUpdate(){
+  this.state.user !== parseInt(this.props.userId) ? 
+  this.props.getUser(parseInt(this.props.userId)).then(use => {
+    this.setState({ user: use.user.id })
+  }) : null
   if (document.getElementById("user-img")) {
     let h = document.getElementById("user-img")
     this.props.profile === undefined
@@ -104,7 +108,7 @@ componentDidUpdate(){
       let trips = this.props.users[this.props.userId].trip_reservations.concat(this.props.users[this.props.userId].host_reservations)
       if(trips.length === 0){ return <h2>No upcoming trips</h2>}
      return trips.map(resId => {
-        return <ReservationComponent key={resId}       reservationId={resId} user={this.props.currentUser}/>
+        return <ReservationComponent key={resId} reservationId={resId} user={this.props.currentUser}/>
       })
     } else {
       return <h2>Log in to see your trips</h2>

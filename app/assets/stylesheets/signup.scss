@@ -1379,8 +1379,7 @@ margin-left: 25px;
   border-bottom-width:1px;
  }
 
- .res-chat > span{
-   margin-left: 20%;
+ .res-chat > #travel-header > span{
    font-size: 20px;
  }
 
@@ -1698,6 +1697,7 @@ writing-mode:horizontal-tb;
 
 #message-text{
   font-size: 13px;
+  margin-left: 5px;
   width: 90%;
   border: none;
   height: 27px;
@@ -1707,6 +1707,7 @@ writing-mode:horizontal-tb;
 #message-submit{
   font-size: 13px;
   width: 8%;
+  cursor: pointer;
   border: none;
   height: 27px;
 

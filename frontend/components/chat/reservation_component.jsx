@@ -69,8 +69,9 @@ class Reservation extends React.Component{
     });
     return (
     <div id={this.props.reservationId} className="res-chat">
+      <div id="travel-header">
       <span>Your conversation with {this.state.host}</span>
-      
+        </div>
         <div className="chat">
           {messageList}
         <span ref={this.bottom}></span>

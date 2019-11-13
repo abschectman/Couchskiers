@@ -81,9 +81,9 @@ class Edit extends React.Component {
   hostingOptions(){
     let options = ["Accepting Guests", "Maybe Accepting Guests", "Not Accepting Guests", "Wants to Meet Up"].map(str => {
       if(this.state.hosting_staus === str){
-      return <option selected="selected" onSelect={this.handleUpdate("hosting_status")} value={str}>{str}</option>
+      return <option selected="selected" key={str} onSelect={this.handleUpdate("hosting_status")} value={str}>{str}</option>
     } else {
-        return <option onSelect={this.handleUpdate("hosting_status")} value={str}>{str}</option>
+        return <option onSelect={this.handleUpdate("hosting_status")} key={str} value={str}>{str}</option>
     }
   })
   return options

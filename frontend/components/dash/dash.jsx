@@ -104,7 +104,7 @@ componentDidUpdate(){
       let trips = this.props.users[this.props.userId].trip_reservations.concat(this.props.users[this.props.userId].host_reservations)
       if(trips.length === 0){ return <h2>No upcoming trips</h2>}
      return trips.map(resId => {
-        return <ReservationComponent reservationId={resId} user={this.props.currentUser}/>
+        return <ReservationComponent key={resId}       reservationId={resId} user={this.props.currentUser}/>
       })
     } else {
       return <h2>Log in to see your trips</h2>

@@ -24,7 +24,7 @@ class Location extends React.Component{
     if(this.props.location.hosts){
     return this.props.location.hosts.map(host => {
       let e = this.props.users[host.id].email.indexOf("@")
-      return (<li className="host-list" id={this.props.users[host.id].id} onClick={this.handleHost}> <img id="host-img" src="
+      return (<li className="host-list" id={this.props.users[host.id].id} key={this.props.users[host.id].id} onClick={this.handleHost}> <img id="host-img" src="
     " alt=""/> <span>{this.props.users[host.id].email.slice(0, e)}... </span></li>)
   })} else {
     return [];
@@ -36,7 +36,7 @@ class Location extends React.Component{
     return this.props.location.requests.map(req => {
       if (this.props.requesters[req.id]){
       let e = this.props.requesters[req.id].email.indexOf("@")
-      return (<li className="host-list" id={this.props.requesters[req.id].id} onClick={this.handleHost}> <img id="host-img" src="
+        return (<li className="host-list" id={this.props.requesters[req.id].id} key={this.props.requesters[req.id].id} onClick={this.handleHost}> <img id="host-img" src="
     " alt=""/> <span>{this.props.requesters[req.id].email.slice(0, e)}... </span></li>)
   }})} else {
     return [];

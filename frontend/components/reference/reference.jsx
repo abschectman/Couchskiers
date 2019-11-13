@@ -15,7 +15,7 @@ class Reference extends React.Component {
   }
 
   render() {
-    if (this.props.props.receiversEmail){
+    if (this.props.props.receiversEmail && this.props.props.location){
     return (
       <div className="ref-list">
         <img id="host-img" />

@@ -58,7 +58,6 @@ class Ref extends React.Component {
     this.props.users[this.props.userId] ? email = this.props.users[this.props.userId].email
     : email = [];
 
-    console.log(this.state)
     return (
       <main>
         <NavContainer/>

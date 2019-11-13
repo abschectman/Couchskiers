@@ -541,7 +541,6 @@ li.settings-li-shown {
     margin: 0 auto;
     justify-content: center;
     background-color: #F1EFEA;
-    height: 100%;
     background-size: cover;
      -webkit-font-feature-settings: 'kern', 'liga', 'pnum';
     font-feature-settings: 'kern', 'liga', 'pnum';
@@ -730,7 +729,7 @@ flex-direction: column;
       
   .description-section{
     margin-top: 20px;
-    height: 400px;
+    height: 200px;
     background-color: white;
     border-bottom: 1.5px solid rgba(0,0,0,0.15);
 }
@@ -1711,4 +1710,59 @@ writing-mode:horizontal-tb;
   border: none;
   height: 27px;
 
+}
+
+#travel{
+  background-color: #fff;
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+  border-radius: 2px;
+  margin: 10px auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#travel-header{
+  padding: 20px;
+  border-bottom: 1px solid #e6e6e6;
+  font-feature-settings: 'kern', 'liga', 'pnum';
+
+    color: #27374c;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+#travel-links{
+  display: flex;
+  justify-content: space-around;
+}
+#travel-links > a{
+    border-left: 5px solid #fff;
+    border-right: 5px solid #fff;
+    color: white;
+    float: left;
+    width: 33%;
+    height: 14em;
+    margin: 15px;
+    overflow: hidden;
+    text-align: center;
+        background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.travel-image-one{
+  background-image: image-url("house.jpg")
+}
+
+.travel-image-two{
+  background-image: image-url("sunset.jpg")
+}
+
+.travel-image-three{
+  background-image: image-url("water.jpg")
 }

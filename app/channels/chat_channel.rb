@@ -10,7 +10,8 @@ class ChatChannel < ApplicationCable::Channel
     message = Message.create!(body: data['message'], reservation_id: params["reservation_id"], user_id: params["user_id"])
     socket = {message: message.body,
     reservation_id: message.reservation_id,
-    user_id: message.user_id
+    user_id: message.user_id,
+    id: message.id
   }
     ChatChannel.broadcast_to('chat_channel', socket)
   end

@@ -2,6 +2,7 @@ import React from "react"
 import NavContainer from "../navbar/nav_container"
 import ReservationComponent from "../chat/reservation_container"
 import Reference from "../reference/reference"
+import Travel from "../travel/travel"
 
 class Dash extends React.Component{
 constructor(props){
@@ -103,7 +104,6 @@ componentDidUpdate(){
       let trips = this.props.users[this.props.userId].trip_reservations.concat(this.props.users[this.props.userId].host_reservations)
       if(trips.length === 0){ return <h2>No upcoming trips</h2>}
      return trips.map(resId => {
-       console.log(this.props.currentUser)
         return <ReservationComponent reservationId={resId} user={this.props.currentUser}/>
       })
     } else {
@@ -261,6 +261,7 @@ render (){
               <span>{this.props.users[this.props.userId].description}</span>
         </div>
       </div>
+      <Travel {... this.props}/>
     </section>
       </section>
     </main>

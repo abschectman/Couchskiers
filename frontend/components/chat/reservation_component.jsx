@@ -27,7 +27,7 @@ class Reservation extends React.Component{
       })
         res.res[this.props.reservationId].messages.forEach(mes => {
           if(res.messages[mes].reservation_id === this.props.reservationId){
-            this.state.messages.push({ body: res.messages[mes].body, user: res.messages[mes].user_id})
+            this.state.messages.push({ body: res.messages[mes].body, user: res.messages[mes].user_id, id: res.messages[mes].id})
         }});
       }
     )
@@ -36,7 +36,7 @@ class Reservation extends React.Component{
       {
         received: data => {
           this.setState({
-            messages: this.state.messages.concat([{body: data.message, user: data.user_id}])
+            messages: this.state.messages.concat([{body: data.message, user: data.user_id, id: data.id}])
           });
         },
         speak: function (data) {
@@ -56,12 +56,11 @@ class Reservation extends React.Component{
   }
 
   render(){
-    console.log(this.props.user)
     const messageList = this.state.messages.map(message => {
       let type
       message.user === this.props.user ? type ="mine" : type = "yours"
      return (
-       <div className={type + " messages"}>
+       <div key={message.id} className={type + " messages"}>
         <div className="message last">
           {message.body}
         </div>

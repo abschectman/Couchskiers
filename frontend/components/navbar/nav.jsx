@@ -67,30 +67,30 @@ class Nav extends React.Component{
       <span className="title">Couchskiers</span>
       <div className="explore">
         <span>Explore</span>
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
         <div className="explore-search">
           <input onChange={this.handleLocation} type="text" placeholder="Where are you going?" value={this.state.location} />
           <ul className="dis-list">{displayString}</ul>
         </div>
       </div>
-        <ul class="container">
+        <ul className="container">
           
           <li><a href="https://www.linkedin.com/in/asher-schectman-b24a2b195?trk=people-guest_profile-result-card_result-card_full-click"
-            target="_blank"><i class="fab fa-linkedin fa-2x"></i><span>Linked In</span></a> </li>
+            target="_blank"><i className="fab fa-linkedin fa-2x"></i><span>Linked In</span></a> </li>
 
-          <li><a href="https://angel.co/asher-schectman" target="_blank"><i class="fab fa-angellist fa-2x"></i><span>AngelList</span></a>
+          <li><a href="https://angel.co/asher-schectman" target="_blank"><i className="fab fa-angellist fa-2x"></i><span>AngelList</span></a>
             </li>
 
-          <li><a href="https://github.com/abschectman" target="_blank"><i class="fab fa-github-square fa-2x"></i><span>Github</span></a>
+          <li><a href="https://github.com/abschectman" target="_blank"><i className="fab fa-github-square fa-2x"></i><span>Github</span></a>
           </li>
 
-          <li><a href="https://abschectman.github.io/" target="_blank"><i class="fas fa-laptop-code fa-2x"></i><span>Website</span></a>
+          <li><a href="https://abschectman.github.io/" target="_blank"><i className="fas fa-laptop-code fa-2x"></i><span>Website</span></a>
             </li>
 
-          <li><a href="" target="_blank" onClick={this.handleShow}><i class="fas fa-user-circle fa-2x"></i><span>Profile</span></a>
+          <li><a href="" target="_blank" onClick={this.handleShow}><i className="fas fa-user-circle fa-2x"></i><span>Profile</span></a>
            </li>
 
-          <li><a href="" target="_blank" onClick={this.showList}><i class="fas fa-cog fa-2x"></i><span>Settings</span></a>
+          <li><a href="" target="_blank" onClick={this.showList}><i className="fas fa-cog fa-2x"></i><span>Settings</span></a>
             </li>
         </ul>
         <ul className="head-settings" onClick={this.showList}> <img id="setting-img" alt="" /> 

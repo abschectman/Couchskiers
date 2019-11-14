@@ -691,6 +691,10 @@ flex-direction: column;
 
    #user-img{
     margin-bottom: 16px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 180px;
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: left center;
@@ -702,22 +706,19 @@ flex-direction: column;
 
    #user-img > img{
      height: 180px;
-     border-radius: 50%;
-    width: 180px;
+    //  border-radius: 50%;
+    // width: 180px;
     // padding-left: 50px;
     // padding-right: 50px;
    }
 
    #user-img-def{
     background-image: image-url("userimg.png");
-    margin-bottom: 16px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left center;
     border: none;
-    margin-top: 10px;
-    height: 100px;
-    width: 100px;
+    width: 180px;
    }
 
    #show-logo{
@@ -1030,6 +1031,11 @@ padding-bottom: 25px;
 font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+#hosts-outer-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .host-list{
   display: flex;
   flex-direction: column;
@@ -1073,7 +1079,7 @@ height:75.5625px;
 line-height:0px;
 margin-bottom:0px;
 margin-left:0px;
-margin-right:25px;
+margin-right:0px;
 margin-top:0px;
 max-height:130px;
 max-width:130px;

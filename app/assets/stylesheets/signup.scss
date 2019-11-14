@@ -1036,7 +1036,7 @@ font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-ser
   padding: 20px;
 }
 
- #host-img{
+ .host-list > img{
    background-image: image-url("blank_portrait.png");
 background-size: 75px;
 backface-visibility:hidden;

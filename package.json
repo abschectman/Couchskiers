@@ -10,6 +10,7 @@
     "heroku": "^7.33.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
+    "react-html-parser": "^2.0.2",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",

@@ -1,5 +1,7 @@
 import React from "react"
 import NavContainer from "../navbar/nav_container"
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+
 class Location extends React.Component{
   constructor(props){
     super(props)
@@ -24,8 +26,9 @@ class Location extends React.Component{
     if(this.props.location.hosts){
     return this.props.location.hosts.map(host => {
       let e = this.props.users[host.id].email.indexOf("@")
-      return (<li className="host-list" id={this.props.users[host.id].id} key={this.props.users[host.id].id} onClick={this.handleHost}> <img id="host-img" src="
-    " alt=""/> <span>{this.props.users[host.id].email.slice(0, e)}... </span></li>)
+      let img;
+      this.props.users[host.id].photo ? img = this.props.users[host.id].photo : img = "<img />" 
+      return (<li className="host-list" id={this.props.users[host.id].id} key={this.props.users[host.id].id} onClick={this.handleHost}> {ReactHtmlParser(img)} <span>{this.props.users[host.id].email.slice(0, e)}... </span></li>)
   })} else {
     return [];
   }
@@ -36,8 +39,22 @@ class Location extends React.Component{
     return this.props.location.requests.map(req => {
       if (this.props.requesters[req.id]){
       let e = this.props.requesters[req.id].email.indexOf("@")
-        return (<li className="host-list" id={this.props.requesters[req.id].id} key={this.props.requesters[req.id].id} onClick={this.handleHost}> <img id="host-img" src="
-    " alt=""/> <span>{this.props.requesters[req.id].email.slice(0, e)}... </span></li>)
+        let img;
+        this.props.requesters[req.id].photo ? img = this.props.requesters[req.id].photo : img = "<img /> "
+        let tag = (
+          <li
+            className="host-list"
+            id={this.props.requesters[req.id].id}
+            key={this.props.requesters[req.id].id}
+            onClick={this.handleHost}
+          >
+            {" "}
+            {ReactHtmlParser(img)}
+             <span> {this.props.requesters[req.id].email.slice(0, e)}... </span>
+          </li>
+        );
+        // tag.innerHtml = img;
+        return tag
   }})} else {
     return [];
   }

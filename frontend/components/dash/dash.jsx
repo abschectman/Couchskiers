@@ -89,7 +89,7 @@ componentDidUpdate(){
 
   handleReferences(){
     let list = []
-    if (this.props.users[this.props.userId].references){ 
+    if (this.props.users[this.props.userId].references  && this.props.references){ 
       list = this.props.users[this.props.userId].references
       .map(ref => {
         let customProps = {

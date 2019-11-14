@@ -26,6 +26,10 @@ class User < ApplicationRecord
   through: :references,
   source: :writer
 
+  has_many :referers_locations,
+  through: :referers,
+  source: :location
+
   has_many :reservations,
   foreign_key: :reserver_id,
   class_name: :Reservation

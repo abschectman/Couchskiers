@@ -38,6 +38,7 @@ constructor(props){
 
 componentDidMount(){
   this.props.getUser(parseInt(this.props.userId)).then(use =>{
+
     this.setState({user: use.user.id})
   })
   if (parseInt(this.props.userId) === this.props.currentUser){
@@ -103,6 +104,7 @@ componentDidUpdate(){
     }
     return list
   }
+
   handleReservations(){
     if (this.props.users[this.props.userId].host_reservations && parseInt(this.state.user) === this.props.currentUser){
       let trips = this.props.users[this.props.userId].trip_reservations.concat(this.props.users[this.props.userId].host_reservations)

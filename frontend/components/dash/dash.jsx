@@ -98,7 +98,7 @@ componentDidUpdate(){
           location: this.props.locations[this.props.users[this.props.references[ref].referer_id].location_id],
           body: this.props.references[ref].body
         }
-        return <Reference props={customProps} />
+        return <Reference key={ref.id} props={customProps} />
       })
     }
     return list
@@ -108,7 +108,7 @@ componentDidUpdate(){
       let trips = this.props.users[this.props.userId].trip_reservations.concat(this.props.users[this.props.userId].host_reservations)
       if(trips.length === 0){ return <h2>No upcoming trips</h2>}
      return trips.map(resId => {
-        return <ReservationComponent key={resId} reservationId={resId} user={this.props.currentUser}/>
+        return <ReservationComponent reservationId={resId} user={this.props.currentUser}/>
       })
     } else {
       return <h2>Log in to see your trips</h2>

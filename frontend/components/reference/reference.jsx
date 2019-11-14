@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {withRouter} from "react-router-dom"
 
 class Reference extends React.Component {
   constructor(props) {
@@ -12,6 +12,10 @@ class Reference extends React.Component {
   componentDidMount() {
     this.props.props.rating ? this.message = `Would Stay With ${this.props.props.sendersEmail.slice(0, 5)} Again`
       : this.message = `Would Not Stay With ${this.props.sendersEmail.slice(0,5)} Again`
+  }
+
+  componentDidUpdate(){
+
   }
 
   render() {
@@ -35,4 +39,4 @@ class Reference extends React.Component {
   }
 }
 
-export default Reference;
+export default withRouter(Reference);

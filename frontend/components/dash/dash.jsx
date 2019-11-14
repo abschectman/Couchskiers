@@ -92,6 +92,7 @@ componentDidUpdate(){
     if (this.props.users[this.props.userId].references  && this.props.references){ 
       list = this.props.users[this.props.userId].references
       .map(ref => {
+        if(this.props.references[ref]){
         let customProps = {
           rating: this.props.references[ref].positive,
           sendersEmail: this.props.users[this.props.userId].email,
@@ -99,7 +100,7 @@ componentDidUpdate(){
           location: this.props.locations[this.props.users[this.props.references[ref].referer_id].location_id],
           body: this.props.references[ref].body
         }
-        return <Reference key={ref.id} props={customProps} />
+        return <Reference key={ref.id} props={customProps} />}
       })
     }
     return list
